@@ -31,3 +31,9 @@ print("Hi %s." %name)
 
 age = input("How old are you?")
 print("%s?! That's really old. You belong in a retirement home." %age)
+
+print("I wish I had a cheeseburger at the moment and that I was sharing it with my friend Jeffery")
+
+print("What is your best friend's name?")
+name= input(">_")
+print("I wish I could meet %s" %name)
