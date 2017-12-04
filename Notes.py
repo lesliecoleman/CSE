@@ -121,5 +121,19 @@
 
 # Random Numbers
 
-import random  # This should be on line 1
-print(random.randint(0, 10))
+# import random  # This should be on line 1
+# print(random.randint(0, 10))
+
+
+
+c = '1'
+print(c == 1)  # we have a string and an integer
+print(int(c) == 1)
+print(c == str(1))
+
+
+# Comparisons
+
+print(1 == 1)  # Use a double equal sign
+print(1 != 2) # 1 is not equal to 2
+print(not False)
