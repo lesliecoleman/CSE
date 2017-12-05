@@ -8,11 +8,28 @@
 # with a space between them.
 
 
-def reverse_order(first_name, last_name):
-    # print("%s, %s"  % (last_name, first_name))
-    print(last_name + " " + first_name)  # Concatenation
+# def reverse_order(first_name, last_name):
+#     # print("%s, %s"  % (last_name, first_name))
+#     print(last_name + " " + first_name)  # Concatenation
+#
+# first = input("What is your first name?")
+# last = input("What is your last name?")
+#
+# reverse_order(first, last)
 
-first = input("What is your first name?")
-last = input("What is your last name?")
+#12.5.17
 
-reverse_order(first, last)
+"""Write a function called add_py
+that takes one parameter called "name"
+and prints out name.py
+
+example:
+add_py("John") == "John.py"
+"""
+
+
+def add_py(name):
+    print(name + ".py")
+
+
+add_py("Jeffery")
