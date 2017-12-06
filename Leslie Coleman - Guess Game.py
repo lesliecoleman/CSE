@@ -14,13 +14,12 @@ winning_number = random.randint(1,50)
 guesses = 5
 correct_guess = False
 
-print(winning_number)
 number = int(input("Choose a number between one and fifty:"))
 
-while guesses != 1 and correct_guess == False:
+while guesses != 0 and correct_guess == False:
     if number == winning_number:
         guesses -= 1
-        print("Yay! You guessed the number! You had %s guesses left." % guesses)
+        print("Yay! You deserve a cake! You had %s guesses left." % guesses)
         correct_guess = True
     elif number > winning_number:
         guesses -= 1
@@ -30,5 +29,5 @@ while guesses != 1 and correct_guess == False:
         guesses -= 1
         print("Sorry! Your number was too low. You have %s guesses left." % guesses)
         number = int(input("Try again:"))
-    elif guesses == 0:
-        print("You lose! Go home and eat away your sorrows")
+if guesses == 0:
+    print("You lose! The correct number was %s. Go home and eat away your sorrows... loser." % winning_number)

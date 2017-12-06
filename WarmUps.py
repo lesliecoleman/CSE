@@ -17,8 +17,7 @@
 #
 # reverse_order(first, last)
 
-#12.5.17
-
+# 12.5.17
 """Write a function called add_py
 that takes one parameter called "name"
 and prints out name.py
@@ -28,8 +27,19 @@ add_py("John") == "John.py"
 """
 
 
-def add_py(name):
-    print(name + ".py")
+# def add_py(name):
+#     print(name + ".py")
+#
+#
+# add_py("Jeffery")
 
+# 12.6.17
+"""Write a function called "add"
+which takes three parameters
+and prints the sum of the numbers
+"""
 
-add_py("Jeffery")
+def add(three, nine, five):
+    print (three + nine + five)
+
+add(3,9,5)
