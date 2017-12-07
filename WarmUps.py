@@ -39,7 +39,27 @@ which takes three parameters
 and prints the sum of the numbers
 """
 
-def add(three, nine, five):
-    print (three + nine + five)
+# def add(three, nine, five):
+#     print (three + nine + five)
+#
+# add(3,9,5)
 
-add(3,9,5)
+# 12.7.17
+# Write a function called "repeat"
+# that takes one parameter (string)
+# and prints it three times
+#
+# example:
+# repeat("Hello") prints:
+# Hello
+# Hello
+# Hello
+
+
+def repeat(word):
+    print(word)
+    print(word)
+    print(word)
+
+
+repeat("Jeffery")
