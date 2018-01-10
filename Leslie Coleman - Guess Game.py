@@ -9,13 +9,14 @@
 
 import random
 
-
+# Initializing variables
 winning_number = random.randint(1,50)
 guesses = 5
 correct_guess = False
 
 number = int(input("Choose a number between one and fifty:"))
 
+# Describes ONE turn (This is the game's controller)
 while guesses != 0 and correct_guess == False:
     if number == winning_number:
         guesses -= 1
@@ -27,7 +28,7 @@ while guesses != 0 and correct_guess == False:
         number = int(input("Try again:"))
     elif number < winning_number:
         guesses -= 1
-        print("Sorry! Your number was too low. You have %s guesses left." % guesses)
+        print("Sorry! Your number was too low. You have %s guess(es) left." % guesses)
         number = int(input("Try again:"))
 if guesses == 0:
     print("You lose! The correct number was %s. Go home and eat away your sorrows... loser." % winning_number)

@@ -2,7 +2,6 @@ import random
 player_money = 15
 player_input = input("So I see your feeling lucky...have fun...loser. Go ahead and roll.")
 rolls = 0
-
 while player_money != 0:
     rolls += 1
     dice1 = random.randint(1, 6)
