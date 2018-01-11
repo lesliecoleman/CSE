@@ -21,4 +21,4 @@ def money_taker(dice1, dice2, money, rounds, highest_round, highest_money):
                 "Your highest amount of money was $%d at round %d" % (rounds, highest_money, highest_round))
 
 
-money_taker(0,0,15,0,0,0)
+money_taker(0, 0, 15, 0, 0, 0)
