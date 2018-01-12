@@ -20,11 +20,11 @@ number = int(input("Choose a number between one and fifty:"))
 while guesses != 0 and correct_guess == False:
     if number == winning_number:
         guesses -= 1
-        print("Yay! You deserve a cake! You had %s guesses left." % guesses)
+        print("Yay! You deserve a cake! You had %s guess(es) left." % guesses)
         correct_guess = True
     elif number > winning_number:
         guesses -= 1
-        print("Sorry! Your number was too high. You have %s guesses left." % guesses)
+        print("Sorry! Your number was too high. You have %s guess(es) left." % guesses)
         number = int(input("Try again:"))
     elif number < winning_number:
         guesses -= 1
