@@ -126,14 +126,44 @@
 
 
 
-c = '1'
-print(c == 1)  # we have a string and an integer
-print(int(c) == 1)
-print(c == str(1))
+# c = '1'
+# print(c == 1)  # we have a string and an integer
+# print(int(c) == 1)
+# print(c == str(1))
 
 
-# Comparisons
+# # Comparisons
 
-print(1 == 1)  # Use a double equal sign
-print(1 != 2) # 1 is not equal to 2
-print(not False)
+# print(1 == 1)  # Use a double equal sign
+# print(1 != 2) # 1 is not equal to 2
+# print(not False)
+
+
+
+# Lists
+
+the_count = [1, 2, 3, 4, 5]
+cheeseburger_ingredients = ['cheese', "beef", "crushed chips", "sesame seed bun", "add on:avocado", "bacon", "mac and cheese",
+                            "ranch", "add on:extra cheese of any choice"]
+print(cheeseburger_ingredients[0])
+print(cheeseburger_ingredients[3])
+print(len(cheeseburger_ingredients))
+
+# print(len(the_count))
+
+# Going through lists
+for generic_item_name in cheeseburger_ingredients:
+    print(generic_item_name)
+
+for the_count in the_count:
+    print(the_count * 2)
+
+length = len(cheeseburger_ingredients)
+range(5)  # A list of the numbers 0 through 4
+range(len(cheeseburger_ingredients))  # Generates a list of all indices
+
+for num in range(len(cheeseburger_ingredients)):
+    item = cheeseburger_ingredients[num]
+    print("The item at index %d is %s" % (num, item))
+
+# Lines 161 - 167 are the MOST IMPORTANT LINES EVER!!!!!!!
