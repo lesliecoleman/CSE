@@ -143,8 +143,8 @@
 # Lists
 
 the_count = [1, 2, 3, 4, 5]
-cheeseburger_ingredients = ['cheese', "beef", "crushed chips", "sesame seed bun", "add on:avocado", "bacon", "mac and cheese",
-                            "ranch", "add on:extra cheese of any choice"]
+cheeseburger_ingredients = ['cheese', "beef", "crushed chips", "sesame seed bun", "add on:avocado", "bacon", "mac and "
+                            "cheese", "ranch", "add on:extra cheese of any choice"]
 print(cheeseburger_ingredients[0])
 print(cheeseburger_ingredients[3])
 print(len(cheeseburger_ingredients))
@@ -167,3 +167,35 @@ for num in range(len(cheeseburger_ingredients)):
     print("The item at index %d is %s" % (num, item))
 
 # Lines 161 - 167 are the MOST IMPORTANT LINES EVER!!!!!!!
+
+# Recasting into a list
+strOne = "Hello World!"
+listOne = list(strOne)
+print(listOne)
+listOne[11] = '.'
+print(listOne)
+
+print(listOne[-1])
+
+# Adding things to a list
+cheeseburger_ingredients.append("Fries")
+print(cheeseburger_ingredients)
+cheeseburger_ingredients.append("Onion Rings")
+print(cheeseburger_ingredients)
+
+# Remove things from a list
+cheeseburger_ingredients.pop(1)
+print(cheeseburger_ingredients)
+cheeseburger_ingredients.remove("Fries")
+print(cheeseburger_ingredients)
+
+# Getting the alphabet
+import string
+print(string.ascii_letters)
+print(string.ascii_lowercase)
+print(string.punctuation)
+
+# Making things Lowercase
+strTwo = "ThIs Is A VeRY oDd sEnTeNCe"
+lowercase = strTwo.lower()
+print(lowercase)
