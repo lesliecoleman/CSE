@@ -5,4 +5,6 @@
 # 4. Reveal Letters based on input
 # 5. Create win and lose conditions
 
-word_bank = ['Jeffery', 'Cheeseburger', 'Wittle Wunny', '', '']
+
+list_of_things = ['High School Musical', 'Mr. Wiebe is The Best Teacher Ever', 'Wittle Wunny', 'Jeffery',
+                 'Boy Meets World', 'Home Improvement', 'Harry Potter', 'Star Wars', 'Cheeseburger', 'Onion Rings']
