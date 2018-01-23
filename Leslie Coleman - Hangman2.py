@@ -1,10 +1,19 @@
 # This is a guide of how to make hangman
 # 1. Make a word bank - 10 items
 # 2. Select a random item to guess
-# 3. Hide the word (use *)
-# 4. Reveal Letters based on input
+# 3. Take in a letter and add it to a list of letters_guessed
+# 4. Hide and reveal letters
 # 5. Create win and lose conditions
+import random
+import string
 
+alphabet = string.ascii_lowercase
+words_phrases = ['high school musical', 'onion rings', 'wittle wunny', 'jeffery', 'boy meets world', 'home improvement',
+                 'harry potter', 'star wars', 'cheeseburger', 'mr wiebe is the best teacher ever']
+word = list(random.choice(words_phrases))
+print(word)
+player_guess = ''
+hidden_word = list('*' * len(word))
+print(player_guess)
+wrong = 10
 
-list_of_things = ['High School Musical', 'Mr. Wiebe is The Best Teacher Ever', 'Wittle Wunny', 'Jeffery',
-                 'Boy Meets World', 'Home Improvement', 'Harry Potter', 'Star Wars', 'Cheeseburger', 'Onion Rings']
