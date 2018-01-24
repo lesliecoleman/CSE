@@ -9,11 +9,14 @@ import string
 
 alphabet = string.ascii_lowercase
 words_phrases = ['high school musical', 'onion rings', 'wittle wunny', 'jeffery', 'boy meets world', 'home improvement',
-                 'harry potter', 'star wars', 'cheeseburger', 'mr wiebe is the best teacher ever']
+                 'harry potter', 'star wars', 'cheeseburger', 'farkle minkus']
 word = list(random.choice(words_phrases))
 print(word)
 player_guess = ''
 hidden_word = list('*' * len(word))
 print(player_guess)
-wrong = 10
+guesses_left = 10
 
+
+while:
+    
