@@ -6,17 +6,35 @@
 # 5. Create win and lose conditions
 import random
 import string
+import sys
 
 alphabet = string.ascii_lowercase
-words_phrases = ['high school musical', 'onion rings', 'wittle wunny', 'jeffery', 'boy meets world', 'home improvement',
-                 'harry potter', 'star wars', 'cheeseburger', 'farkle minkus']
+words_phrases = ['stuart', 'bunny', 'lightsaber', 'jeffery', 'cookies', 'monkey', 'pickles', 'kyber', 'cheeseburger',
+                 'farkle']
 word = list(random.choice(words_phrases))
 print(word)
-player_guess = ''
 hidden_word = list('*' * len(word))
-print(player_guess)
 guesses_left = 10
+regular_word = random.choice(words_phrases)
+guesses = []
 
+while guesses_left > 0:
+    print(guesses)
+    player_guess = input("take a guess >_")
+    guesses.append(player_guess)
+    if player_guess not in regular_word:
+        guesses_left -= 1
+    print("You now have %s guesses" % guesses_left)
+    output = []
+    for letter in regular_word:
+        if letter in guesses:
+            output.append(letter)
+        else:
+            output.append('*')
+    output = ''.join(output)
+    if '*' not in output:
+        print('Congrats you win. The word was %s' % regular_word)
+        sys.exit()
+    print(output)
 
-while:
-    
+print("You lose. The word was %s" % regular_word)
