@@ -9,18 +9,20 @@ import string
 import sys
 
 alphabet = string.ascii_lowercase
-words_phrases = ['stuart', 'bunny', 'lightsaber', 'jeffery', 'cookies', 'monkey', 'pickles', 'kyber', 'cheeseburger',
-                 'farkle']
+# words_phrases = ['stuart', 'supercalifragilisticexpialidocious', 'lightsaber', 'jeffery', 'cookies', 'monkey',
+# 'pickles', 'mikewazowski', 'cheeseburger','farkle']
+words_phrases = ['picklesupercalifragilisticexpialidociousjeffery']
 word = list(random.choice(words_phrases))
-print(word)
-hidden_word = list('*' * len(word))
 guesses_left = 10
-regular_word = random.choice(words_phrases)
+regular_word = random.choice(words_phrases).lower()
 guesses = []
+hidden_word = ('*' * len(regular_word))
+print(hidden_word)
 
 while guesses_left > 0:
     print(guesses)
-    player_guess = input("take a guess >_")
+    print("The word is %s letters long." % len(regular_word))
+    player_guess = input("take a guess >_").lower()
     guesses.append(player_guess)
     if player_guess not in regular_word:
         guesses_left -= 1
