@@ -9,13 +9,12 @@ import string
 import sys
 
 alphabet = string.ascii_lowercase
-# words_phrases = ['stuart', 'supercalifragilisticexpialidocious', 'lightsaber', 'jeffery', 'cookies', 'monkey',
-# 'pickles', 'mikewazowski', 'cheeseburger','farkle']
-words_phrases = ['picklesupercalifragilisticexpialidociousjeffery']
+words_phrases = ['gabriella montez', 'chad danforth', 'sharpay evans', 'kelsi nielsen', 'taylor mckessie',
+                 'High School Musical', 'zeke baylor', 'troy bolton', 'ryan evans', 'coach jack bolton']
 word = list(random.choice(words_phrases))
 guesses_left = 10
 regular_word = random.choice(words_phrases).lower()
-guesses = []
+guesses = [' ']
 hidden_word = ('*' * len(regular_word))
 print(hidden_word)
 
