@@ -7,13 +7,12 @@
 import random
 import string
 import sys
-
 alphabet = string.ascii_lowercase
 words_phrases = ['gabriella montez', 'chad danforth', 'sharpay evans', 'kelsi nielsen', 'taylor mckessie',
-                 'High School Musical', 'zeke baylor', 'troy bolton', 'ryan evans', 'coach jack bolton']
-word = list(random.choice(words_phrases))
+                  'ms darbus', 'zeke baylor', 'troy bolton', 'ryan evans', 'coach jack bolton']
 guesses_left = 10
 regular_word = random.choice(words_phrases).lower()
+word = list(regular_word)
 guesses = [' ']
 hidden_word = ('*' * len(regular_word))
 print(hidden_word)
@@ -37,5 +36,4 @@ while guesses_left > 0:
         print('Congrats you win. The word was %s' % regular_word)
         sys.exit()
     print(output)
-
-print("You lose. The word was %s" % regular_word)
+print("Sorry you didn't guess correct. The word was %s" % regular_word)

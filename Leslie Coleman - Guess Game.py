@@ -31,4 +31,4 @@ while guesses != 0 and correct_guess == False:
         print("Sorry! Your number was too low. You have %s guess(es) left." % guesses)
         number = int(input("Try again:"))
 if guesses == 0:
-    print("You lose! The correct number was %s. Go home and eat away your sorrows... loser." % winning_number)
+    print("You lose! The correct number was %s. Go home and eat away your sorrows." % winning_number)
