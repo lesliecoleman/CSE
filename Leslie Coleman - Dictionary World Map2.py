@@ -3,7 +3,7 @@ world_map = {
         'NAME': 'Metal Box',
         'DESCRIPTION': 'You wake up in a metal box. There is one path to the north. You are wearing leather armor.',
         'PATHS': {
-
+            'NORTH': 'BEDROOM'
         }
     },
     'BEDROOM': {
@@ -12,14 +12,15 @@ world_map = {
                        'cage pointing to writing on the wall saying “Don’t Trust The Ducks!” In another corner you see '
                        'a rubber duck wearing a fedora. There is a path to the west and a path to the east.',
         'PATHS': {
-
+            'WEST': 'HOLE_1',
+            'EAST': 'KITCHEN'
         }
     },
     'HOLE_1': {
         'NAME': 'Hole',
-        'DESCRIPTION': 'You fall down a deep hole to your death.',
+        'DESCRIPTION': 'You fall down a deep hole and land on a matress. There is a path to the south.',
         'PATHS': {
-
+            'SOUTH': ''
         }
     },
     'KITCHEN': {
@@ -110,23 +111,45 @@ world_map = {
     },
     'STORAGE_2': {
         'NAME': 'Whiteboard Marker Storage',
-        'DESCRIPTION': '',
+        'DESCRIPTION': 'You enter a room full of seafoam green colored whiteboard markers. There is two paths up the '
+                       'staircase and down the staircase.',
         'PATHS': {
 
         }
     },
     'STORAGE_3': {
         'NAME': 'Large Storage Room (Boss Area)',
-        'DESCRIPTION': '',
+        'DESCRIPTION': 'You enter a dim lighted storage room. You see over 3,000 tiny rubber ducks in the room '
+                       'surrounding a the largest rubber duck in the world. You see that your armor has been upgraded '
+                       'and you now have a sword to fight the ducks.',
         'PATHS': {
 
         }
     },
     'PARTY': {
         'NAME': 'Party Central 101',
-        'DESCRIPTION': '',
+        'DESCRIPTION': 'You had just defeated the ducks. You walk into a party room to celebrate the win '
+                       'with all the people who live in the house. Congrats on beating the game. You did a nice job',
         'PATHS': {
 
         }
     }
 }
+
+current_node = world_map['M_BOX']
+directions = ['NORTH', 'SOUTH', 'WEST', 'EAST', 'NORTHWEST', 'SOUTHEAST', 'UP', 'DOWN']
+
+while True:
+    print(current_node['NAME'])
+    print(current_node['DESCRIPTION'])
+    command = input('>_')
+    if command == 'quit':
+        quit(0)
+    if command in directions:
+        try:
+            name_of_node = current_node['PATHS'][command]
+            current_node = world_map[name_of_node]
+        except KeyError:
+            print("You cannot go this way")
+    else:
+        print("Command not recognized")
