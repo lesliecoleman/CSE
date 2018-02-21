@@ -31,10 +31,10 @@ def distance_calc(x1, y1, x2, y2):
 print(distance_calc(0, 0, 3, 4))
 
 
-def theorem_calc(x1, y1):
-    inside = (x1) ** 2 + (y1) ** 2
+def theorem_calc(a, b):
+    inside = (a) ** 2 + (b) ** 2
     answer = inside ** 0.5
     return answer
 
 
-print(theorem_calc(5, 4))
+print(theorem_calc(5, 12))
