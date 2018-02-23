@@ -150,8 +150,8 @@ world_map = {
         'NAME': 'Large Storage Room (Boss Area)',
         'DESCRIPTION': 'You enter a dim lighted storage room. You see over 3,000 tiny rubber ducks in the room '
                     'surrounding a the largest rubber duck in the world. You see that your armor has been upgraded '
-                    'and \nyou now have a sword to fight the ducks. There is a path to the east but it is locked, and '
-                    'a path up the stairs. Get the key to unlock the door.',
+                    'and \nyou now have a sword to fight the ducks. There is a path to the east but it is shut, and '
+                    'a path up the stairs. Defeat the duck to open the door.',
         'PATHS': {
             'UP': 'STORAGE_2',
             'EAST': 'PARTY'
