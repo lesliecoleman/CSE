@@ -18,7 +18,7 @@ world_map = {
     },
     'HOLE_1': {
         'NAME': 'Hole',
-        'DESCRIPTION': 'You fall down a deep hole and land on a matress. There is a path to the south.',
+        'DESCRIPTION': 'You fall down a deep hole and land on a mattress. There is a path to the south.',
         'PATHS': {
             'SOUTH': 'CAVE_1'
         }
@@ -113,7 +113,7 @@ world_map = {
     'POOL': {
         'NAME': 'Pool',
         'DESCRIPTION': 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck '
-                       'wearing a fedora. There are two paths to the east and to the north-west. ',
+                       'wearing a fedora. There are two paths to the east and to the north-west.',
         'PATHS': {
             'NORTHWEST': 'LIBRARY',
             'EAST': 'BATHROOM_2'
