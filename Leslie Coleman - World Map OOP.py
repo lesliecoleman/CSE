@@ -42,14 +42,14 @@ FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is par
 POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
        'wearing a fedora. There are two paths to the east and to the northwest.'
 LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks wearing ' \
-          'fedoras all over the room. You need to get out either to the west or southeast.'
+          'fedoras all over the room. You need to get out either to the west, southeast, or northno.'
 CLASS = 'You walk into what look likes an old classroom. Books are left all over the desks and there is ' \
         'a staircase in the back. \nThere are two paths leading out, down the staircase and to the east.'
 MARSTORAGE = 'You enter a room full of seafoam green colored whiteboard markers. There is two paths up the ' \
              'staircase and down the staircase.'
 LARSTORAGE = 'You enter a dim lighted storage room. You see over 3,000 tiny rubber ducks in the room ' \
              'surrounding a the largest rubber duck in the world. You see that your armor has been upgraded ' \
-             'and \nyou now have a sword to fight the ducks. There is a path to the east but it is shut, and ' \
+             '\nand you now have a sword to fight the ducks. There is a path to the east but it is shut, and ' \
              'a path up the stairs. Defeat the duck to open the door.'
 PARTY = 'You had just defeated the ducks. You walk into a party room to celebrate the win ' \
         'with all the people who live in the house. Congrats on beating the game. You did a nice job.'
@@ -60,17 +60,18 @@ kitchen = Room('Kitchen', KITCHEN, 'hole_2', 's_box', 'bathroom_1', 'bedroom', '
 hole = Room('Hole', HOLE_1, '', 'cave_1', '', '', '', '', '', '', '', '')
 cave_1 = Room('Cave', CAVE_1, 'hole', '', 'm_box', '', '', '', '', '', '', '')
 bathroom_1 = Room('Bathroom', BATH_1, '', 'storage_room', 'grass_field', 'kitchen', '', '', '', '', '', '')
-hole_2 = Room('Hole', HOLE_2, '', '', '', '', 'cave_2', '', '', '', '', '')
-cave_2 = Room('Cave', CAVE_2, '', '', '', '', '', 'hole_2', 'bedroom','', '', '')
+hole_2 = Room('Hole', HOLE_1, '', '', '', '', 'cave_2', '', '', '', '', '')
+cave_2 = Room('Cave', CAVE_2, '', '', '', '', '', 'hole_2', 'bedroom', '', '', '')
 storage_room = Room('Storage Room', STORAGE, 'bathroom_1', '', '', '', '', '', '', '', '', '')
 s_box = Room('Box', S_BOX, 'kitchen', '', '', 'm_box', '', '', '', '', '', '')
 grass_field = Room('Grass Field', GRASS, '', 'barn', '', 'bathroom_1', '', '', '', '', '', '')
 barn = Room('Barn', BARN, 'grass_field', '', '', 'fancy_bath', '', '', '', '', '', '')
 fancy_bath = Room('Fancy Bathroom', FANBATH, '', '', 'barn', 'pool', '', '', '', '', '', '')
 pool = Room('Pool', POOL, '', '', 'fancy_bath', '', 'library', '', '', '', '', '')
-library = Room('Library', LIBRARY, '', '', '', 'classroom', '', 'pool', '', '', '', '')
+library = Room('Library', LIBRARY, 'm_box', '', '', 'classroom', '', 'pool', '', '', '', '')
 classroom = Room('Classroom', CLASS, '', '', 'library', '', '', '', '', '', 'marker_storage', '')
-marker_storage = Room('Whiteboard Marker Storage', MARSTORAGE, '', '', '', '', '', '', '', 'classroom', 'large_storage', '')
+marker_storage = Room('Whiteboard Marker Storage', MARSTORAGE, '', '', '', '', '', '', '', 'classroom', 'large_storage',
+                      '')
 large_storage = Room('Large Storage Room', LARSTORAGE, '', '', 'party', '', '', '', '', 'marker_storage', '', '')
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '')
 
@@ -84,12 +85,13 @@ while is_playing:
     print(current_node.description)
     command = input('>_')
     if command == 'quit':
+        print('Sorry that you want to quit. You did good though.')
         quit(0)
     if command in directions:
         try:
             current_node.move(command)
         except KeyError:
-            print("You can't travel this way.")
+            print("This way is not available. Please try again.")
     else:
         print("That command is not available. Please try again.")
     if current_node == party:
