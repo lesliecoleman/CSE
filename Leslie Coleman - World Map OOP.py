@@ -1,7 +1,9 @@
 class Room(object):
-    def __init__(self, name, description, north, south, east, west, northwest, southeast, southwest, up, down, walls):
+    def __init__(self, name, description, description2, north, south, east, west, northwest, southeast, southwest, up,
+                 down, walls):
         self.name = name
         self.description = description
+        self.description2 = description2
         self.north = north
         self.south = south
         self.east = east
@@ -12,83 +14,97 @@ class Room(object):
         self.up = up
         self.down = down
         self.walls = walls
+        self.visited = False
 
     def move(self, direction):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
 
-M_BOX = 'You wake up in a metal box. There is one path to the north. You are wearing leather armor.'
-BEDROOM = 'You enter what looks like a bedroom. In the upper right corner you see a person trapped in a ' \
-          'cage pointing to writing on the wall saying “Don’t Trust The Ducks!” \nIn another corner you see ' \
-          'a rubber duck wearing a fedora. There is a path to the west and a path to the east.'
+M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
+M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
+BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see a person trapped in a ' \
+          'cage pointing to \nwriting on the wall saying “Don’t Trust The Ducks!” In another corner you see ' \
+          'a rubber duck wearing a fedora. \nThere is a path to the west and a path to the east.'
+BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
 KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
-          'There is four paths: West, North, South, and East.'
+          '\nThere is four paths: West, North, South, and East.'
+KITCHEN2 = 'Welcome back to the kitchen. Go either north, south, east, or west'
 HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to the south.'
 CAVE_1 = 'You enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
-BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. There is three paths: ' \
+BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. \nThere is three paths: ' \
          'East, West, and South.'
+BATH_1_2 = 'Welcome to bathroom. Paths to the west, east, and south'
 HOLE_2 = 'You fall down another deep hole and there is a path to the northwest.'
 CAVE_2 = 'You are in another dirt cave. There is two paths to the southwest and southeast.'
-STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, there is a cardboard box. ' \
-          'It seems to be partially open.'
+STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, \nthere is a cardboard box. ' \
+          'It seems to be partially open. There is a path to the north.'
+STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'
 S_BOX = 'You are now in a steel box. There is a path to the north and one to the west.'
-GRASS = 'You leave the bathroom and you are now in a grassy field. To the north and to the east there ' \
+GRASS = 'You leave the bathroom and you are now in a grassy field. To the north and to the east \nthere ' \
         'is a brick wall. There are two paths to the west and south.'
 BARN = 'You walk through two open doors into a barn. There is two paths leading west and north. ' \
-       'It appears that nothing is in the barn but you feel like there is something watching you.'
+       '\nIt appears that nothing is in the barn but you feel like there is something watching you.'
 FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is partially broken. ' \
-          'There are two paths to the west and to the east.'
+          '\nThere are two paths to the west and to the east.'
 POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
-       'wearing a fedora. There are two paths to the east and to the northwest.'
-LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks wearing ' \
-          'fedoras all over the room. You need to get out either to the west, southeast, or northno.'
+       '\nwearing a fedora. There are two paths to the east and to the northwest.'
+LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks \nwearing ' \
+          'fedoras all over the room. You need to get out either to the west, southeast, or north.'
 CLASS = 'You walk into what look likes an old classroom. Books are left all over the desks and there is ' \
         'a staircase in the back. \nThere are two paths leading out, down the staircase and to the east.'
-MARSTORAGE = 'You enter a room full of seafoam green colored whiteboard markers. There is two paths up the ' \
+MARSTORAGE = 'You enter a room full of seafoam green colored whiteboard markers. \nThere is two paths up the ' \
              'staircase and down the staircase.'
 LARSTORAGE = 'You enter a dim lighted storage room. You see over 3,000 tiny rubber ducks in the room ' \
-             'surrounding a the largest rubber duck in the world. You see that your armor has been upgraded ' \
+             '\nsurrounding a the largest rubber duck in the world. You see that your armor has been upgraded ' \
              '\nand you now have a sword to fight the ducks. There is a path to the east but it is shut, and ' \
-             'a path up the stairs. Defeat the duck to open the door.'
+             'a path up the stairs. \nDefeat the duck to open the door.'
 PARTY = 'You had just defeated the ducks. You walk into a party room to celebrate the win ' \
-        'with all the people who live in the house. Congrats on beating the game. You did a nice job.'
+        '\nwith all the people who live in the house. Congrats on beating the game. You did a nice job.'
 
-m_box = Room('Metal Box', M_BOX, 'bedroom', '', '', '', '', '', '', '', '', '')
-bedroom = Room('Empty Bedroom', BEDROOM, '', '', 'kitchen', 'hole', '', '', '', '', '', '')
-kitchen = Room('Kitchen', KITCHEN, 'hole_2', 's_box', 'bathroom_1', 'bedroom', '', '', '', '', '', '')
-hole = Room('Hole', HOLE_1, '', 'cave_1', '', '', '', '', '', '', '', '')
-cave_1 = Room('Cave', CAVE_1, 'hole', '', 'm_box', '', '', '', '', '', '', '')
-bathroom_1 = Room('Bathroom', BATH_1, '', 'storage_room', 'grass_field', 'kitchen', '', '', '', '', '', '')
-hole_2 = Room('Hole', HOLE_1, '', '', '', '', 'cave_2', '', '', '', '', '')
-cave_2 = Room('Cave', CAVE_2, '', '', '', '', '', 'hole_2', 'bedroom', '', '', '')
-storage_room = Room('Storage Room', STORAGE, 'bathroom_1', '', '', '', '', '', '', '', '', '')
-s_box = Room('Box', S_BOX, 'kitchen', '', '', 'm_box', '', '', '', '', '', '')
-grass_field = Room('Grass Field', GRASS, '', 'barn', '', 'bathroom_1', '', '', '', '', '', '')
-barn = Room('Barn', BARN, 'grass_field', '', '', 'fancy_bath', '', '', '', '', '', '')
-fancy_bath = Room('Fancy Bathroom', FANBATH, '', '', 'barn', 'pool', '', '', '', '', '', '')
-pool = Room('Pool', POOL, '', '', 'fancy_bath', '', 'library', '', '', '', '', '')
-library = Room('Library', LIBRARY, 'm_box', '', '', 'classroom', '', 'pool', '', '', '', '')
-classroom = Room('Classroom', CLASS, '', '', 'library', '', '', '', '', '', 'marker_storage', '')
-marker_storage = Room('Whiteboard Marker Storage', MARSTORAGE, '', '', '', '', '', '', '', 'classroom', 'large_storage',
-                      '')
-large_storage = Room('Large Storage Room', LARSTORAGE, '', '', 'party', '', '', '', '', 'marker_storage', '', '')
-party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '')
+m_box = Room('Metal Box', M_BOX, '', 'bedroom', '', '', '', '', '', '', '', '', '')
+bedroom = Room('Empty Bedroom', BEDROOM, '', '', '', 'kitchen', 'hole', '', '', '', '', '', '')
+kitchen = Room('Kitchen', KITCHEN, '', 'hole_2', 's_box', 'bathroom_1', 'bedroom', '', '', '', '', '', '')
+hole = Room('Hole', HOLE_1, '', '', 'cave_1', '', '', '', '', '', '', '', '')
+cave_1 = Room('Cave', CAVE_1, '', 'hole', '', 'm_box', '', '', '', '', '', '', '')
+bathroom_1 = Room('Bathroom', BATH_1, '', '', 'storage_room', 'grass_field', 'kitchen', '', '', '', '', '', '')
+hole_2 = Room('Hole', HOLE_2, '', '', '', '', '', 'cave_2', '', '', '', '', '')
+cave_2 = Room('Cave', CAVE_2, '', '', '', '', '', '', 'hole_2', 'bedroom', '', '', '')
+storage_room = Room('Storage Room', STORAGE, '', 'bathroom_1', '', '', '', '', '', '', '', '', '')
+s_box = Room('Box', S_BOX, '', 'kitchen', '', '', 'm_box', '', '', '', '', '', '')
+grass_field = Room('Grass Field', GRASS, '', '', 'barn', '', 'bathroom_1', '', '', '', '', '', '')
+barn = Room('Barn', BARN, '', 'grass_field', '', '', 'fancy_bath', '', '', '', '', '', '')
+fancy_bath = Room('Fancy Bathroom', FANBATH, '', '', '', 'barn', 'pool', '', '', '', '', '', '')
+pool = Room('Pool', POOL, '', '', '', 'fancy_bath', '', 'library', '', '', '', '', '')
+library = Room('Library', LIBRARY, '', 'm_box', '', '', 'classroom', '', 'pool', '', '', '', '')
+classroom = Room('Classroom', CLASS, '', '', '', 'library', '', '', '', '', '', 'marker_storage', '')
+marker_storage = Room('Whiteboard Marker Storage', MARSTORAGE, '', '', '', '', '', '', '', '', 'classroom',
+                      'large_storage', '')
+large_storage = Room('Large Storage Room', LARSTORAGE, '', '', '', 'party', '', '', '', '', 'marker_storage', '', '')
+party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
 
 
 current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
+short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
 
 while is_playing:
     print(current_node.name)
-    print(current_node.description)
-    command = input('>_')
+    if not current_node.visited:
+        print(current_node.description)
+    command = input('>_').lower().strip()
     if command == 'quit':
-        print('Sorry that you want to quit. You did good though.')
-        quit(0)
+        print('I am sorry this was hard. I wish you could try again.')
+        exit(0)
+    elif command == 'look':
+        print(current_node.description2)
+    elif command in short_directions:
+        pos = short_directions.index(command)
+        command = directions[pos]
     if command in directions:
         try:
+            current_node.visited = True
             current_node.move(command)
         except KeyError:
             print("This way is not available. Please try again.")
