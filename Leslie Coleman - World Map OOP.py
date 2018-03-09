@@ -115,12 +115,12 @@ while is_playing:
             current_node.visited = True
             current_node.move(command)
         except KeyError:
-            print("This way is not available. Please try again.")
+            print("This way is not available. Please try again. Thank You")
     elif command == 'look':
         print(current_node.name)
         print(current_node.description2)
     else:
-        print("That command is not available. Please try again.")
+        print("That command is not available. Please try again. Thank You.")
     if current_node == party:
         print(current_node.name)
         print(current_node.description)

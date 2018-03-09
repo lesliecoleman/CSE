@@ -18,11 +18,11 @@ class Character(object):
         self.description = description
         self.dialogue = dialogue
         self.holding = holding
-        self.death = False
+        self.dead = False
 
     def pick_up(self):
         if self.holding:
-            print("Not available")
+            print("You can not pick up this item at this time. Please try again later. Thank you.")
         else:
             print("You pick up the item.")
 
@@ -31,14 +31,16 @@ class Character(object):
         target.damage()
 
     def death(self):
-        if self.health < 0:
-            self.death = True
-        else:
-            self.death = False
+        if self.health <= 0:
+            self.dead = True
+            print("%s is dead." % self.name)
 
     def damage(self):
         self.health -= 1
-        print("%s has %s health" % (self.name, self.health))
+        if self.health >= 1:
+            print("%s has %s health" % (self.name, self.health))
+        else:
+            self.death()
 
 
 print("I present to you Civil War")
@@ -48,8 +50,12 @@ print(cap_america.description)
 print(iron_man.description)
 iron_man.attack(cap_america)
 cap_america.attack(iron_man)
+iron_man.attack(cap_america)
 cap_america.attack(iron_man)
+iron_man.attack(cap_america)
 cap_america.attack(iron_man)
+iron_man.attack(cap_america)
 cap_america.attack(iron_man)
+iron_man.attack(cap_america)
 cap_america.attack(iron_man)
-cap_america.attack(iron_man)
+iron_man.attack(cap_america)
