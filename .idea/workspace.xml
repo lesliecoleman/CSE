@@ -54,7 +54,7 @@
       <file leaf-file-name="Leslie Coleman - World Map OOP.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - World Map OOP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="2074">
               <caret line="122" column="74" lean-forward="false" selection-start-line="122" selection-start-column="74" selection-end-line="122" selection-end-column="74" />
               <folding />
             </state>
@@ -64,18 +64,28 @@
       <file leaf-file-name="Leslie Coleman - Characters.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - Characters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="272">
               <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Leslie Coleman - Items.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Leslie Coleman - Items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - Items.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inheritance Notes.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Inheritance Notes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="33" column="74" lean-forward="false" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -113,11 +123,13 @@
         <option value="$PROJECT_DIR$/Leslie Coleman - World Map OOP.py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - Characters.py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - Items.py" />
+        <option value="$PROJECT_DIR$/Inheritance Notes.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="422" />
+    <option name="x" value="44" />
+    <option name="y" value="-17" />
     <option name="width" value="945" />
     <option name="height" value="688" />
   </component>
@@ -154,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Leslie Coleman - Items">
+  <component name="RunManager" selected="Python.Inheritance Notes">
     <configuration name="2Leslie Coleman - Lucky7s" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -189,7 +201,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Function Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Inheritance Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -201,7 +213,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Function Notes.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Inheritance Notes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -259,19 +271,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.2Leslie Coleman - Lucky7s" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Function Notes" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Class Notes" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
-      <item index="5" class="java.lang.String" itemvalue="Python.Leslie Coleman - Items" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Class Notes" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Leslie Coleman - Items" />
+      <item index="5" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Leslie Coleman - Items" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Class Notes" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Function Notes" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Leslie Coleman - Items" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Class Notes" />
       </list>
     </recent_temporary>
   </component>
@@ -340,13 +352,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Guess Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Lucky7s.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -655,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -677,7 +681,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - World Map OOP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="2074">
           <caret line="122" column="74" lean-forward="false" selection-start-line="122" selection-start-column="74" selection-end-line="122" selection-end-column="74" />
           <folding />
         </state>
@@ -685,7 +689,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Characters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="272">
           <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
@@ -695,6 +699,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Inheritance Notes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="33" column="74" lean-forward="false" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
           <folding />
         </state>
       </provider>
