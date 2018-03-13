@@ -31,12 +31,23 @@ test_car.change_directions()
 
 class KeylessCar(Car):
     def __init__(self, material, seat, speed, passengers, windows):
-        super(KeylessCar, self).__init__(material, seat, speed, passengers,windows)
+        super(KeylessCar, self).__init__(material, seat, speed, passengers, windows)
 
     def turn_on(self):
         print("You push the button and the car turns on")
 
 
 test_car.turn_on()
-cool_car = KeylessCar('Plastic', 'Driver side', 653324104025, 121071205792794739587239573957937520374195793755902, True)
+cool_car = KeylessCar('Plastic', 'Driver side', 653324104025, 121071205792794739587279573957937520374195793755902, True)
 cool_car.turn_on()
+
+
+class Tesla(Car):
+    def __init__(self, material, seat, speed, passengers, window):
+        super(Tesla, self).__init__(material, seat, speed, passengers, window)
+
+    def fly(self):
+        print("You launch the car into low earth orbit")
+
+    def turn_on(self):
+        Car.turn_on(self)
