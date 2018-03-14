@@ -26,7 +26,7 @@ class Programmer(Employee):
 
     def program(self):
         if self.working:
-            print("%s is working. Don\'t try and bother them" % self.name)
+            print("%s is working. Don\'t try and bother her" % self.name)
         elif not self.working:
             print("%s got done with work early" % self.name)
 
