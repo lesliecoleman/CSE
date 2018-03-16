@@ -1,8 +1,8 @@
 class item(object):
-    def __init__(self, weapons, consumable, armor):
-        self.weapons = weapons
-        self.consumable = consumable
-        self.armor = armor
+    def __init__(self, name, weight, value):
+        self.name = name
+        self.weight = weight
+        self.value = value
 
-    def pick_up(self):
+    def take(self):
         
