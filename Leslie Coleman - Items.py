@@ -25,12 +25,21 @@ class Food(Item):
 
         
 class Weapons(Item):
-    def __init__(self, name, eat, attack):
+    def __init__(self, name, eat, attack, damage, shrink, splash):
         self.attack = attack
+        self.damage = damage
+        self.shrink = shrink
+        self.splash = splash
         super(Weapons, self).__init__(name)
 
     def attack(self):
-        
+
+
+class Ranged(Weapons):
+    def __init__(self, name, attack, damage):
+        super(Ranged, self).__init__(name, None, 20, 2, None, None)
+
+
 
 
 player_inv = []
