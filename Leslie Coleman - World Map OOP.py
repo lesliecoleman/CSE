@@ -21,6 +21,10 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
+BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr. Wieb, and your older brother, Wiebe ' \
+            '"The Duck" Wieb. "How ya doing sis?" said Wiebe. "Good. Dad\'s music is annoying tho." you said.'
+
+
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
 BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see a person trapped in a ' \
@@ -28,15 +32,19 @@ BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you 
           'a rubber duck wearing a fedora. \nThere is a path to the west and a path to the east.'
 BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
 KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
-          '\nThere is four paths: West, North, South, and East.'
+          '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
 KITCHEN2 = 'Welcome back to the kitchen. Go either north, south, east, or west'
 HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to the south.'
+HOLE_1_2 = 'You are back in the hole. There is a path to the south'
 CAVE_1 = 'You enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
+CAVE_1_2 = 'You re-enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
 BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. \nThere is three paths: ' \
          'East, West, and South.'
 BATH_1_2 = 'Welcome to bathroom. Paths to the west, east, and south'
 HOLE_2 = 'You fall down another deep hole and there is a path to the northwest.'
+HOLE_2_2 = 'You are back in the deep hole and there is a path to the northwest.'
 CAVE_2 = 'You are in another dirt cave. There is two paths to the southwest and southeast.'
+CAVE_2_2 = 'You re-enter the dirt cave. There is two paths to the southwest and southeast.'
 STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, \nthere is a cardboard box. ' \
           'It seems to be partially open. There is a path to the north.'
 STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'

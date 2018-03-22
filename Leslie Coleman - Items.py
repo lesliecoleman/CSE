@@ -32,14 +32,14 @@ class Weapons(Item):
         self.splash = splash
         super(Weapons, self).__init__(name)
 
-    def attack(self):
-
 
 class Ranged(Weapons):
     def __init__(self, name, attack, damage):
         super(Ranged, self).__init__(name, None, 20, 2, None, None)
 
 
-
+class Armor(Item):
+    def __init__(self):
+        super(Armor, self).__init__()
 
 player_inv = []
