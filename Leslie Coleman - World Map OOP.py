@@ -21,8 +21,9 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr. Wieb, and your older brother, Wiebe ' \
-            '"The Duck" Wieb. "How ya doing sis?" said Wiebe. "Good. Dad\'s music is annoying tho." you said.'
+BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr. Wybe, and your older brother, Wiebe ' \
+            '"The Duck" Wybe. "How ya doing sis?" said Wiebe. \n"Good. Dad\'s music is annoying tho." you said. "It is ' \
+            'not!" yelled. Mr. Wybe. You pull up to your Uncle\'s'
 
 
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'

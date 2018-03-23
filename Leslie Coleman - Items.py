@@ -25,11 +25,12 @@ class Food(Item):
 
         
 class Weapons(Item):
-    def __init__(self, name, eat, attack, damage, shrink, splash):
+    def __init__(self, name, eat, attack, damage, shrink, splash, spread):
         self.attack = attack
         self.damage = damage
         self.shrink = shrink
         self.splash = splash
+        self.spread = spread
         super(Weapons, self).__init__(name)
 
 
@@ -39,7 +40,15 @@ class Ranged(Weapons):
 
 
 class Armor(Item):
-    def __init__(self):
-        super(Armor, self).__init__()
+    def __init__(self, name, chestplate, helmet, boots, pants):
+        self.chestplate = chestplate
+        self.helmet = helmet
+        self.boots = boots
+        self.pants = pants
+        super(Armor, self).__init__(name)
+
+    def put_on(self):
+
+
 
 player_inv = []
