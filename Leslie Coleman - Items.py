@@ -36,7 +36,7 @@ class Weapons(Item):
 
 class Ranged(Weapons):
     def __init__(self, name, attack, damage):
-        super(Ranged, self).__init__(name, None, 20, 2, None, None)
+        super(Ranged, self).__init__(name, None, 20, 2, None, None, None)
 
 
 class Armor(Item):
@@ -46,9 +46,6 @@ class Armor(Item):
         self.boots = boots
         self.pants = pants
         super(Armor, self).__init__(name)
-
-    def put_on(self):
-
 
 
 player_inv = []
