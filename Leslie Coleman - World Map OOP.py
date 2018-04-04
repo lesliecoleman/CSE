@@ -23,7 +23,8 @@ class Room(object):
 
 BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr. Wybe, and your older brother, Wiebe ' \
             '"The Duck" Wybe. "How ya doing sis?" said Wiebe. \n"Good. Dad\'s music is annoying tho." you said. "It is ' \
-            'not!" yelled. Mr. Wybe. You pull up to your Uncle\'s'
+            'not!" yelled. Mr. Wybe. You pull up to your Uncle\'s house and enter in. A hour later your dad and uncle ' \
+            'get into a fight. \nYour dad left and took your brother with him and you never saw them again.'
 
 
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
@@ -106,6 +107,7 @@ current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
+print(BACKSTORY)
 
 while is_playing:
     print(current_node.name)
