@@ -3,11 +3,11 @@ class Item(object):
         self.name = name
 
     def take(self):
-        if player_inv < 15:
+        if len(player_inv) < 15:
             print("You grab the %s" % self.name)
             player_inv.append(self)
 
-        elif player_inv == 15:
+        elif len(player_inv) == 15:
             print("You don't have space to pick up the %s" % self.name)
 
 
@@ -182,40 +182,40 @@ marker_storage = Room('Whiteboard Marker Storage', MARSTORAGE, MARSTORAGE2, '', 
 large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'party', '', '', '', '', 'marker_storage',
                      '', '')
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
-
-
-current_node = m_box
-directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
-short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
-is_playing = True
-print(BACKSTORY)
-
-while is_playing:
-    print(current_node.name)
-    if not current_node.visited:
-        print(current_node.description)
-    command = input('>_').lower().strip()
-    # Edits command if needed
-    if command == 'quit':
-        print('I am sorry this was hard. I wish you could try again.')
-        exit(0)
-    elif command in short_directions:
-        pos = short_directions.index(command)
-        command = directions[pos]
-    if command in directions:
-        try:
-            current_node.visited = True
-            current_node.move(command)
-        except KeyError:
-            print("This way is not available. Please try again. Thank You")
-    elif command == 'look':
-        print(current_node.name)
-        print(current_node.description2)
-    else:
-        print("That command is not available. Please try again. Thank You.")
-    if current_node == party:
-        print(current_node.name)
-        print(current_node.description)
-        is_playing = False
+#
+#
+# current_node = m_box
+# directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
+# short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
+# is_playing = True
+# print(BACKSTORY)
+#
+# while is_playing:
+#     print(current_node.name)
+#     if not current_node.visited:
+#         print(current_node.description)
+#     command = input('>_').lower().strip()
+#     # Edits command if needed
+#     if command == 'quit':
+#         print('I am sorry this was hard. I wish you could try again.')
+#         exit(0)
+#     elif command in short_directions:
+#         pos = short_directions.index(command)
+#         command = directions[pos]
+#     if command in directions:
+#         try:
+#             current_node.visited = True
+#             current_node.move(command)
+#         except KeyError:
+#             print("This way is not available. Please try again. Thank You")
+#     elif command == 'look':
+#         print(current_node.name)
+#         print(current_node.description2)
+#     else:
+#         print("That command is not available. Please try again. Thank You.")
+#     if current_node == party:
+#         print(current_node.name)
+#         print(current_node.description)
+#         is_playing = False
 
 player_inv = []

@@ -21,10 +21,15 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
+INFO = 'I do not own anything that you have heard of before.'
 BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr. Wybe, and your older brother, Wiebe '\
             '"The Duck" Wybe. "How ya doing sis?" said Wiebe. \n"Good. Dad\'s music is annoying tho." you said. ' \
             '"It is not!" yelled. Mr. Wybe. You pull up to your Uncle\'s house and enter in. A hour later your dad ' \
             'and uncle get into a fight. \nYour dad left and took your brother with him and you never saw them again.'
+
+EPILOGUE: 'After defeating the ducks you rescue your brother and head to the party. Your dad was taken away and your ' \
+         'brother and you went to live with your uncle. \nAll is well again. Next time you hope you have backup from ' \
+          'your friends... The Avengers.'
 
 
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
@@ -77,8 +82,7 @@ LARSTORAGE = 'You enter a dim lighted storage room. You see over 3,000 tiny rubb
              '\nand you now have a sword to fight the ducks. There is a path to the east but it is shut, and ' \
              'a path up the stairs. \nDefeat the duck to open the door.'
 LARSTORAGE2 = 'You are back. Not quite sure if you have defeated the ducks yet. Have fun I guess... :('
-PARTY = 'You had just defeated the ducks. You walk into a party room to celebrate the win ' \
-        '\nwith all the people who live in the house. Congrats on beating the game. You did a nice job.'
+PARTY = 'Welcome. Hero.'
 
 m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '')
 bedroom = Room('Empty Bedroom', BEDROOM, BEDROOM2, '', '', 'kitchen', 'hole', '', '', '', '', '', '')
@@ -103,10 +107,12 @@ large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'par
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
 
 
+
 current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
+print(INFO)
 print(BACKSTORY)
 
 while is_playing:
