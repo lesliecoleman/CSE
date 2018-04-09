@@ -107,13 +107,13 @@ large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'par
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
 
 
-
 current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
 print(INFO)
 print(BACKSTORY)
+
 
 while is_playing:
     print(current_node.name)

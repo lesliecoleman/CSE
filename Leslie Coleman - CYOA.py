@@ -107,7 +107,6 @@ BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr
             'Wiebe "The Duck" Wybe. "How ya doing sis?" said Wiebe. \n"Good. Dad\'s music is annoying tho." you said. '\
             '"It is not!" yelled. Mr. Wybe. You pull up to your Uncle\'s house and enter in. A hour later your dad ' \
             'and uncle get into a fight. \nYour dad left and took your brother with him and you never saw them again.'
-
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
 BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see a person trapped in a ' \
@@ -182,8 +181,8 @@ marker_storage = Room('Whiteboard Marker Storage', MARSTORAGE, MARSTORAGE2, '', 
 large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'party', '', '', '', '', 'marker_storage',
                      '', '')
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
-#
-#
+
+
 # current_node = m_box
 # directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 # short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
