@@ -124,10 +124,13 @@ while is_playing:
     if command == 'quit':
         print('I am sorry this was hard. I wish you could try again.')
         exit(0)
+    elif command == 'ducks':
+        print('James Veitch says do not visit weneedtotalkabouttheducks.com but the merch is high quality. Remember to '
+              'only buy one duck for your bathroom.')
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
-    if command in directions:
+    elif command in directions:
         try:
             current_node.visited = True
             current_node.move(command)

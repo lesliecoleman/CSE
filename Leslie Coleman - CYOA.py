@@ -48,6 +48,10 @@ class Armor(Item):
         super(Armor, self).__init__(name)
 
 
+class Map(Item):
+    
+
+
 class Character(object):
     def __init__(self, name, description, dialogue, holding):
         self.name = name
@@ -107,6 +111,7 @@ BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr
             'Wiebe "The Duck" Wybe. "How ya doing sis?" said Wiebe. \n"Good. Dad\'s music is annoying tho." you said. '\
             '"It is not!" yelled. Mr. Wybe. You pull up to your Uncle\'s house and enter in. A hour later your dad ' \
             'and uncle get into a fight. \nYour dad left and took your brother with him and you never saw them again.'
+LISTOFCOMMANDS = 'North, South, East, West, Northwest, Southeast, Southwest, Up, Down, Look, Quit, Party'
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
 BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see a person trapped in a ' \
@@ -142,7 +147,7 @@ FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is par
 FANBATH2 = 'Welcome back to the fancy bathroom. Please exit to the west or east.'
 POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
        '\nwearing a fedora. There are two paths to the east and to the northwest.'
-POOL2 = 'Welcome back. Sadly the pool is closed. Please leave to the east and northwest.'
+POOL2 = 'Welcome back. Sadly the pool is closed. Please leave to the east or northwest.'
 LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks \nwearing ' \
           'fedoras all over the room. You need to get out either to the west, southeast, or north.'
 LIBRARY2 = 'AHCHOO! The ducks are moving! Get out to the west, southeast, or north!'
@@ -187,20 +192,34 @@ current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
+print(LISTOFCOMMANDS)
 print(BACKSTORY)
 
+
 while is_playing:
+    # Rom information
     print(current_node.name)
     if not current_node.visited:
         print(current_node.description)
+
+    # Input
     command = input('>_').lower().strip()
+
+    # Pre-processing
     if command == 'quit':
-        print('I am sorry this was hard. I wish you could try again.')
+        print('I am sorry this was hard. I wish you would continue.')
         exit(0)
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
-    if command in directions:
+    elif command == 'teleport' or 'travel':
+        map.fast_travel()
+
+    # Process input
+    if command == 'party':
+        print('Sorry you can not party yet. Beat the ducks and then you can celebrate brave adventurer.')
+
+    elif command in directions:
         try:
             current_node.visited = True
             current_node.move(command)
@@ -211,6 +230,8 @@ while is_playing:
         print(current_node.description2)
     else:
         print("That command is not available. Please try again. Thank You.")
+
+    # Handling win conditions
     if current_node == party:
         print(current_node.name)
         print(current_node.description)
