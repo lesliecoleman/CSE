@@ -46,30 +46,6 @@ class Armor(Item):
         self.boots = boots
         self.pants = pants
         super(Armor, self).__init__(name)
-        
-        
-class Map(Item):
-    def __init__(self, name, description, location):
-        super(Map, self).__init__(name)
-        
-    def fast_travel(self):
-        print("You open the map and see some rooms that are different. There are 2 rooms, Movie Set, Basement"
-              "")
-        print("Where would you like to travel?")
-        room_dictionary = {
-            'Movie Set': MOVIESET,
-            'Basement': BASEMENT
-        }
-        teleport = input(">_")
-        if teleport in room_dictionary:
-            print("You are now in the %s room" % teleport)
-            global current_node
-            current_node = room_dictionary[teleport]
-            current_node.visited = True
-        else:
-            print('Sadly that room does not exist on the map.')
-        
-        
 
 
 class Character(object):
@@ -184,9 +160,6 @@ LARSTORAGE = 'You enter a dim lighted storage room. You see over 3,000 tiny rubb
 LARSTORAGE2 = 'You are back. Not quite sure if you have defeated the ducks yet. Have fun I guess... :('
 PARTY = 'You had just defeated the ducks. You walk into a party room to celebrate the win ' \
         '\nwith all the people who live in the house. Congrats on beating the game. You did a nice job.'
-MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
-BASEMENT = 'Hey!!! It\'s a basement!!!!'
-
 
 m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '')
 bedroom = Room('Empty Bedroom', BEDROOM, BEDROOM2, '', '', 'kitchen', 'hole', '', '', '', '', '', '')
@@ -209,12 +182,7 @@ marker_storage = Room('Whiteboard Marker Storage', MARSTORAGE, MARSTORAGE2, '', 
 large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'party', '', '', '', '', 'marker_storage',
                      '', '')
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
-movieset = Room('Movie Set', MOVIESET, '', '', '', '', '', '', '', '', '', '', '')
-basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', '', '', '')
 
-
-travel_map = Map('Piece of paper', 'You find a map and rooms that you have not seen are on there. You can travel '
-                                   'to the rooms by saying travel and then where you want to go.', '')
 
 current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
@@ -240,9 +208,6 @@ while is_playing:
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
-        
-    elif command == 'travel':
-        travel_map.fast_travel()
 
     # Process input
     if command == 'party':
@@ -266,4 +231,4 @@ while is_playing:
         print(current_node.description)
         is_playing = False
 
-player_inv = [travel_map]
+player_inv = []
