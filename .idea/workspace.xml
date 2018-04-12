@@ -14,8 +14,8 @@
       <file leaf-file-name="Leslie Coleman - CYOA.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - CYOA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+            <state relative-caret-position="-335">
+              <caret line="188" column="37" lean-forward="false" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -34,7 +34,7 @@
       <file leaf-file-name="Leslie Coleman - Items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - Items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
+            <state relative-caret-position="782">
               <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
               <folding />
             </state>
@@ -44,8 +44,18 @@
       <file leaf-file-name="Leslie Coleman - Characters.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - Characters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Leslie Coleman - Guess Game.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Leslie Coleman - Guess Game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -54,8 +64,18 @@
       <file leaf-file-name="Leslie Coleman - World Map OOP.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - World Map OOP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="121" column="36" lean-forward="true" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+            <state relative-caret-position="2057">
+              <caret line="121" column="36" lean-forward="false" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2Leslie Coleman - Lucky7s.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2Leslie Coleman - Lucky7s.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51">
+              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -94,9 +114,9 @@
         <option value="$PROJECT_DIR$/Leslie Coleman - Programmer.py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - Items.py" />
         <option value="$PROJECT_DIR$/Notes for CYOA.py" />
-        <option value="$PROJECT_DIR$/Leslie Coleman - Characters.py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - World Map OOP.py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - CYOA.py" />
+        <option value="$PROJECT_DIR$/Leslie Coleman - Characters.py" />
       </list>
     </option>
   </component>
@@ -125,7 +145,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Leslie Coleman - Dictionary World Map2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Leslie Coleman - Guess Game.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -139,7 +159,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Leslie Coleman - CYOA">
+  <component name="RunManager" selected="Python.Leslie Coleman - Guess Game">
     <configuration name="2Leslie Coleman - Lucky7s" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -191,7 +211,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Leslie Coleman - Dictionary World Map2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Leslie Coleman - Guess Game" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -203,7 +223,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Leslie Coleman - Dictionary World Map2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Leslie Coleman - Guess Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="Leslie Coleman - Lucky7s" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Leslie Coleman - Lucky7s.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -225,38 +262,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Pythageoram Theorem - Leslie Coleman" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pythageoram Theorem - Leslie Coleman.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.2Leslie Coleman - Lucky7s" />
       <item index="1" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - Dictionary World Map2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Pythageoram Theorem - Leslie Coleman" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
-      <item index="5" class="java.lang.String" itemvalue="Python.Leslie Coleman - CYOA" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Leslie Coleman - CYOA" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Leslie Coleman - Lucky7s" />
+      <item index="5" class="java.lang.String" itemvalue="Python.Leslie Coleman - Guess Game" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Leslie Coleman - CYOA" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Pythageoram Theorem - Leslie Coleman" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Leslie Coleman - Dictionary World Map2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Leslie Coleman - Guess Game" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - CYOA" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Leslie Coleman - Lucky7s" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Leslie Coleman - World Map OOP" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +302,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1933439" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29635498" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -516,13 +536,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Hangman.py" />
-    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Lucky7s.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - BlackJack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -537,24 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Guess Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Hangman2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="35" column="23" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="35" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2Leslie Coleman - Lucky7s.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -621,6 +620,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Lucky7s.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2Leslie Coleman - Lucky7s.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Leslie Coleman - World Map OOP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="121" column="36" lean-forward="false" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Notes for CYOA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -631,32 +654,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
+        <state relative-caret-position="782">
           <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Guess Game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Characters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Leslie Coleman - World Map OOP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="121" column="36" lean-forward="true" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+        <state relative-caret-position="175">
+          <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - CYOA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        <state relative-caret-position="-335">
+          <caret line="188" column="37" lean-forward="false" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
           <folding />
         </state>
       </provider>

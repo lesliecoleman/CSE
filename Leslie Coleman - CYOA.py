@@ -48,10 +48,6 @@ class Armor(Item):
         super(Armor, self).__init__(name)
 
 
-class Map(Item):
-    
-
-
 class Character(object):
     def __init__(self, name, description, dialogue, holding):
         self.name = name
@@ -212,8 +208,6 @@ while is_playing:
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
-    elif command == 'teleport' or 'travel':
-        map.fast_travel()
 
     # Process input
     if command == 'party':
