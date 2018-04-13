@@ -53,7 +53,7 @@ class Map(Item):
         super(Map, self).__init__(name)
         
     def fast_travel(self):
-        print("You open the map and see some rooms that are different. There are 2 rooms, Movie Set, Basement"
+        print("You open the map and see some rooms that are different. There are 2 rooms, Movie Set and Basement"
               "")
         print("Where would you like to travel?")
         room_dictionary = {
@@ -62,14 +62,11 @@ class Map(Item):
         }
         teleport = input(">_")
         if teleport in room_dictionary:
-            print("You are now in the %s room" % teleport)
+            print("You are now in(at) the %s " % teleport)
             global current_node
             current_node = room_dictionary[teleport]
-            current_node.visited = True
         else:
             print('Sadly that room does not exist on the map.')
-        
-        
 
 
 class Character(object):
@@ -237,12 +234,11 @@ while is_playing:
     if command == 'quit':
         print('I am sorry this was hard. I wish you would continue.')
         exit(0)
+    elif command == 'travel':
+        travel_map.fast_travel()
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
-        
-    elif command == 'travel':
-        travel_map.fast_travel()
 
     # Process input
     if command == 'party':
