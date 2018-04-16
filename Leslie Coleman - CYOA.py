@@ -65,6 +65,7 @@ class Map(Item):
             print("You are now in(at) the %s " % teleport)
             global current_node
             current_node = room_dictionary[teleport]
+            print(current_node)
         else:
             print('Sadly that room does not exist on the map.')
 
@@ -236,6 +237,8 @@ while is_playing:
         exit(0)
     elif command == 'travel':
         travel_map.fast_travel()
+    elif command == 'bread':
+        print('You take a drink of water')
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
