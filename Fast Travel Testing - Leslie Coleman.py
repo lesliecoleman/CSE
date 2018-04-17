@@ -29,15 +29,14 @@ class Map(KeyItem):
               "")
         print("Where would you like to travel?")
         room_dictionary = {
-            'Movie Set': MOVIESET,
-            'Basement': BASEMENT
+            'Movie Set': movieset,
+            'Basement': basement
         }
         teleport = input(">_")
         if teleport in room_dictionary:
             print("You are now in(at)the %s " % teleport)
             global current_node
             current_node = room_dictionary[teleport]
-            print(current_node)
         else:
             print('Sadly that room does not exist on the map.')
 
@@ -84,6 +83,7 @@ travel_map = Map('Piece of paper', 'You find a map and rooms that you have not s
                                    'to the rooms by saying travel and then where you want to go.', '')
 
 current_node = m_box
+
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
@@ -103,8 +103,7 @@ while is_playing:
     if command == 'quit':
         print('I am sorry this was hard. I wish you would continue.')
         exit(0)
-    elif command == 'travel':
-        travel_map.fast_travel()
+
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
@@ -119,6 +118,8 @@ while is_playing:
             current_node.move(command)
         except KeyError:
             print("This way is not available. Please try again. Thank You")
+    elif command == 'travel':
+        travel_map.fast_travel()
     elif command == 'look':
         print(current_node.name)
         print(current_node.description2)

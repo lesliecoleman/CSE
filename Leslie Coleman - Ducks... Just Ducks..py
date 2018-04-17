@@ -53,19 +53,30 @@ class Map(Item):
         super(Map, self).__init__(name)
         
     def fast_travel(self):
-        print("You open the map and see some rooms that are different. There are 2 rooms, Movie Set and Basement"
-              "")
+        print("You open the map and see some rooms that are different. There are 2 rooms that you can travel to from "
+              "certain rooms, Movie Set and Basement. \nThe rooms that you can travel to the Movie Set and Basement "
+              "from are Metal Box, Empty Bedroom, Kitchen, Bathroom 1, Grass Field, Barn, \nFancy Bathroom, Pool, "
+              "Library and Classroom. Remember that you can travel back to the room that you came from.")
         print("Where would you like to travel?")
         room_dictionary = {
-            'Movie Set': MOVIESET,
-            'Basement': BASEMENT
+            'Movie Set': movieset,
+            'Basement': basement,
+            'Metal Box': m_box,
+            'Empty Bedroom': bedroom,
+            'Kitchen': kitchen,
+            'Bathroom 1': bathroom_1,
+            'Grass Field': grass_field,
+            'Barn': barn,
+            'Fancy Bathroom': fancy_bath,
+            'Pool': pool,
+            'Library': library,
+            'Classroom': classroom
         }
         teleport = input(">_")
         if teleport in room_dictionary:
-            print("You are now in(at) the %s " % teleport)
+            print("You are now in(at) the %s" % teleport)
             global current_node
             current_node = room_dictionary[teleport]
-            print(current_node)
         else:
             print('Sadly that room does not exist on the map.')
 
@@ -165,7 +176,8 @@ FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is par
 FANBATH2 = 'Welcome back to the fancy bathroom. Please exit to the west or east.'
 POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
        '\nwearing a fedora. There are two paths to the east and to the northwest.'
-POOL2 = 'Welcome back. Sadly the pool is closed. Please leave to the east or northwest.'
+POOL2 = 'Welcome back. Sadly the pool is closed. *From a distance* "No it\'s not! yelled Bucky" Please leave to the ' \
+        'east or northwest.'
 LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks \nwearing ' \
           'fedoras all over the room. You need to get out either to the west, southeast, or north.'
 LIBRARY2 = 'AHCHOO! The ducks are moving! Get out to the west, southeast, or north!'
@@ -213,6 +225,7 @@ basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', '', '', ''
 
 travel_map = Map('Piece of paper', 'You find a map and rooms that you have not seen are on there. You can travel '
                                    'to the rooms by saying travel and then where you want to go.', '')
+info = 'I do not own any Marvel Characters mentioned.'
 
 current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
@@ -220,6 +233,7 @@ short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
 print(LISTOFCOMMANDS)
 print(BACKSTORY)
+print(info)
 
 
 while is_playing:
@@ -235,10 +249,6 @@ while is_playing:
     if command == 'quit':
         print('I am sorry this was hard. I wish you would continue.')
         exit(0)
-    elif command == 'travel':
-        travel_map.fast_travel()
-    elif command == 'bread':
-        print('You take a drink of water')
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
@@ -253,6 +263,8 @@ while is_playing:
             current_node.move(command)
         except KeyError:
             print("This way is not available. Please try again. Thank You")
+    elif command == 'travel':
+        travel_map.fast_travel()
     elif command == 'look':
         print(current_node.name)
         print(current_node.description2)
