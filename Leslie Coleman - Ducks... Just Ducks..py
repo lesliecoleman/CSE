@@ -54,9 +54,12 @@ class Map(Item):
         
     def fast_travel(self):
         print("You open the map and see some rooms that are different. There are 2 rooms that you can travel to from "
-              "certain rooms, Movie Set and Basement. \nThe rooms that you can travel to the Movie Set and Basement "
-              "from are Metal Box, Empty Bedroom, Kitchen, Bathroom 1, Grass Field, Barn, \nFancy Bathroom, Pool, "
-              "Library and Classroom. Remember that you can travel back to the room that you came from.")
+              "certain rooms, Movie Set and Basement.")
+        print()
+        print('The rooms that you can travel to the Movie Set and Basement from are Metal Box, Empty Bedroom, Kitchen, '
+              'Bathroom 1, Grass Field, Barn, \nFancy Bathroom, Pool, '
+              'Library and Classroom. Remember that you can travel back to the room that you came from.')
+        print()
         print("Where would you like to travel?")
         room_dictionary = {
             'Movie Set': movieset,
@@ -140,10 +143,11 @@ BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr
             'Wiebe "The Duck" Wybe. "How ya doing sis?" said Wiebe. \n"Good. Dad\'s music is annoying tho." you said. '\
             '"It is not!" yelled. Mr. Wybe. You pull up to your Uncle\'s house and enter in. A hour later your dad ' \
             'and uncle get into a fight. \nYour dad left and took your brother with him and you never saw them again.'
-LISTOFCOMMANDS = 'North, South, East, West, Northwest, Southeast, Southwest, Up, Down, Look, Quit, Party'
+LISTOFCOMMANDS = 'North, South, East, West, Northwest, Southeast, Southwest, Up, Down, Look, Quit, Party, Travel, ' \
+                 'Inventory'
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
-BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see a person trapped in a ' \
+BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see Sam Wilson trapped in a ' \
           'cage pointing to \nwriting on the wall saying “Don’t Trust The Ducks!” In another corner you see ' \
           'a rubber duck wearing a fedora. \nThere is a path to the west and a path to the east.'
 BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
@@ -154,8 +158,8 @@ HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to t
 HOLE_1_2 = 'You are back in the hole. There is a path to the south'
 CAVE_1 = 'You enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
 CAVE_1_2 = 'You re-enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
-BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. \nThere is three paths: ' \
-         'East, West, and South.'
+BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. There is also a bar of soap that looks ' \
+         'like someone took a bite of, courtesy of Thor \nThere is three paths: East, West, and South.'
 BATH_1_2 = 'Welcome to bathroom. Paths to the west, east, and south'
 HOLE_2 = 'You fall down another deep hole and there is a path to the northwest.'
 HOLE_2_2 = 'You are back in the deep hole and there is a path to the northwest.'
@@ -166,24 +170,27 @@ STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner,
 STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'
 S_BOX = 'You are now in a steel box. There is a path to the north and one to the west.'
 GRASS = 'You leave the bathroom and you are now in a grassy field. To the north and to the east \nthere ' \
-        'is a brick wall. There are two paths to the west and south.'
+        'is a brick wall. There are two paths to the west and south. Also you see Tony Stark working on something in ' \
+        'the corner'
 GRASS2 = 'You are now back in the grass field. Paths to the west and south.'
 BARN = 'You walk through two open doors into a barn. There is two paths leading west and north. ' \
-       '\nIt appears that nothing is in the barn but you feel like there is something watching you.'
-BARN2 = 'There is still something watching you. Get out ASAP. Hurry to the west or north!!'
+       '\nIt appears that nothing is in the barn but you feel like there is something watching you. It\'s probably ' \
+       'just Clint Barton'
+BARN2 = 'There is still something watching you. " You need to get out, ASAP!" yelled Natasha Romanoff. Hurry to the ' \
+        'west or north!!'
 FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is partially broken. ' \
           '\nThere are two paths to the west and to the east.'
 FANBATH2 = 'Welcome back to the fancy bathroom. Please exit to the west or east.'
 POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
        '\nwearing a fedora. There are two paths to the east and to the northwest.'
-POOL2 = 'Welcome back. Sadly the pool is closed. *From a distance* "No it\'s not! yelled Bucky" Please leave to the ' \
-        'east or northwest.'
+POOL2 = 'Welcome back. Sadly the pool is closed. *From a distance* "No it\'s not!" yelled Bucky Barnes Please leave ' \
+        'to the east or northwest.'
 LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks \nwearing ' \
           'fedoras all over the room. You need to get out either to the west, southeast, or north.'
 LIBRARY2 = 'AHCHOO! The ducks are moving! Get out to the west, southeast, or north!'
 CLASS = 'You walk into what look likes an old classroom. Books are left all over the desks and there is ' \
         'a staircase in the back. \nThere are two paths leading out, down the staircase and to the east.'
-CLASS2 = 'Welcome to class. Please leave before the teacher comes. Head out to the east or go downstairs.'
+CLASS2 = 'Welcome to class. Please leave before Steve Rogers comes back. Head out to the east or go downstairs.'
 MARSTORAGE = 'You enter a room full of seafoam green colored whiteboard markers. \nThere is two paths up the ' \
              'staircase and down the staircase.'
 MARSTORAGE2 = 'The markers are still there. Go upstairs or downstairs.'
@@ -193,9 +200,12 @@ LARSTORAGE = 'You enter a dim lighted storage room. You see over 3,000 tiny rubb
              'a path up the stairs. \nDefeat the duck to open the door.'
 LARSTORAGE2 = 'You are back. Not quite sure if you have defeated the ducks yet. Have fun I guess... :('
 PARTY = 'You had just defeated the ducks. You walk into a party room to celebrate the win ' \
-        '\nwith all the people who live in the house. Congrats on beating the game. You did a nice job.'
+        '\nwith all the people who live in the house and Bruce Banner. Congrats on beating the game. You did a nice ' \
+        'job.'
 MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
-BASEMENT = 'Hey!!! It\'s a basement!!!!'
+BASEMENT = 'Hey!!! It\'s a basement!!!! And Loki is here!!!! Go up and discover a secret.'
+TOWER = 'WOW! It\'s the Avengers Tower. That\'s where they came from. Go down to head back to the basement. Pepper ' \
+        'Pots is walking around trying to find the Avengers'
 
 
 m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '')
@@ -220,11 +230,13 @@ large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'par
                      '', '')
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
 movieset = Room('Movie Set', MOVIESET, '', '', '', '', '', '', '', '', '', '', '')
-basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', '', '', '')
+basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', 'avengers_tower', '', '')
+avengers_tower = Room('Avengers Tower', TOWER, '', '', '', '', '', '', '', '', '', 'basement', '')
 
 
-travel_map = Map('Piece of paper', 'You find a map and rooms that you have not seen are on there. You can travel '
-                                   'to the rooms by saying travel and then where you want to go.', '')
+travel_map = Map('Piece of paper with weird stuff', 'You find a map and rooms that you have not seen are on there. '
+                                                    'You can travel to the rooms by saying travel and then where you '
+                                                    'want to go.', '')
 info = 'I do not own any Marvel Characters mentioned.'
 
 current_node = m_box
@@ -232,12 +244,17 @@ directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'south
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
 print(LISTOFCOMMANDS)
+print()
 print(BACKSTORY)
+print()
 print(info)
+
+player_inv = [travel_map]
 
 
 while is_playing:
     # Rom information
+    print()
     print(current_node.name)
     if not current_node.visited:
         print(current_node.description)
@@ -256,6 +273,9 @@ while is_playing:
     # Process input
     if command == 'party':
         print('Sorry you can not party yet. Beat the ducks and then you can celebrate brave adventurer.')
+    elif command == 'inventory':
+        for item in player_inv:
+            print(item.name)
 
     elif command in directions:
         try:
@@ -277,4 +297,3 @@ while is_playing:
         print(current_node.description)
         is_playing = False
 
-player_inv = [travel_map]
