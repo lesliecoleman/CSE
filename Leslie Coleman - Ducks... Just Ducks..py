@@ -116,6 +116,11 @@ class Character(object):
             self.death()
 
 
+Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '')
+Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, ', '', '')
+Sam = Character('Sam Wilson', 'AKA "Falcon"', '"Look at the wall... Don\'t trust the ducks!" says Sam.', '')
+
+
 class Room(object):
     def __init__(self, name, description, description2, north, south, east, west, northwest, southeast, southwest, up,
                  down, walls):
@@ -148,8 +153,8 @@ LISTOFCOMMANDS = 'North, South, East, West, Northwest, Southeast, Southwest, Up,
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
 BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see Sam Wilson trapped in a ' \
-          'cage pointing to \nwriting on the wall saying “Don’t Trust The Ducks!” In another corner you see ' \
-          'a rubber duck wearing a fedora. \nThere is a path to the west and a path to the east.'
+          'cage. In another corner you see a rubber duck wearing a fedora. \nThere is a path to the west and a ' \
+          'path to the east.'
 BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
 KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
           '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
@@ -276,7 +281,6 @@ while is_playing:
     elif command == 'inventory':
         for item in player_inv:
             print(item.name)
-
     elif command in directions:
         try:
             current_node.visited = True
@@ -290,6 +294,8 @@ while is_playing:
         print(current_node.description2)
     else:
         print("That command is not available. Please try again. Thank You.")
+    if current_node == bedroom:
+        print(Sam.dialogue)
 
     # Handling win conditions
     if current_node == party:

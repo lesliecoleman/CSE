@@ -44,10 +44,12 @@ class Character(object):
 
 
 print("I present to you Civil War")
-cap_america = Character('Steve Rogers', 'Large man in a colorful suit holding a round shield.', None, None)
+cap_america = Character('Steve Rogers', 'Large man in a colorful suit holding a round shield.', 'Hi. I\'m Captain '
+                                                                                                'America', None)
 iron_man = Character('Tony Stark', "Rich man in a suit. (Might also be Batman in disguise.)", None, None)
 print(cap_america.description)
 print(iron_man.description)
+print(cap_america.dialogue)
 iron_man.attack(cap_america)
 cap_america.attack(iron_man)
 iron_man.attack(cap_america)
