@@ -117,7 +117,7 @@ class Character(object):
 
 
 Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '')
-Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, ', '', '')
+Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '')
 Sam = Character('Sam Wilson', 'AKA "Falcon"', '"Look at the wall... Don\'t trust the ducks!" says Sam.', '')
 
 
@@ -163,8 +163,8 @@ HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to t
 HOLE_1_2 = 'You are back in the hole. There is a path to the south'
 CAVE_1 = 'You enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
 CAVE_1_2 = 'You re-enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
-BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. There is also a bar of soap that looks ' \
-         'like someone took a bite of, courtesy of Thor \nThere is three paths: East, West, and South.'
+BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. There is also a bar of soap that ' \
+         'looks like someone took a bite of, courtesy of Thor \nThere is three paths: East, West, and South.'
 BATH_1_2 = 'Welcome to bathroom. Paths to the west, east, and south'
 HOLE_2 = 'You fall down another deep hole and there is a path to the northwest.'
 HOLE_2_2 = 'You are back in the deep hole and there is a path to the northwest.'
@@ -210,7 +210,7 @@ PARTY = 'You had just defeated the ducks. You walk into a party room to celebrat
 MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
 BASEMENT = 'Hey!!! It\'s a basement!!!! And Loki is here!!!! Go up and discover a secret.'
 TOWER = 'WOW! It\'s the Avengers Tower. That\'s where they came from. Go down to head back to the basement. Pepper ' \
-        'Pots is walking around trying to find the Avengers'
+        'Pots is walking around trying to figure out where everyone went.'
 
 
 m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '')
@@ -302,4 +302,3 @@ while is_playing:
         print(current_node.name)
         print(current_node.description)
         is_playing = False
-
