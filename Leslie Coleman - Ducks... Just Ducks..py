@@ -46,6 +46,14 @@ class Armor(Item):
         self.boots = boots
         self.pants = pants
         super(Armor, self).__init__(name)
+
+
+sword = Weapons('Duck Sword', None, 20, 5, None, None, None)
+shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None)
+chestplate = Armor('Chestplate', True, False, False, False)
+helmet = Armor('Helmet', False, True, False, False)
+boots = Armor('Boots', False, False, True, False)
+pants = Armor('Pants', False, False, False, True)
         
         
 class Map(Item):
@@ -87,7 +95,7 @@ class Map(Item):
 class Character(object):
     def __init__(self, name, description, dialogue, holding):
         self.name = name
-        self.health = 6
+        self.health = 60
         self.description = description
         self.dialogue = dialogue
         self.holding = holding
@@ -239,9 +247,8 @@ basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', 'avengers_
 avengers_tower = Room('Avengers Tower', TOWER, '', '', '', '', '', '', '', '', '', 'basement', '')
 
 
-travel_map = Map('Piece of paper with weird stuff', 'You find a map and rooms that you have not seen are on there. '
-                                                    'You can travel to the rooms by saying travel and then where you '
-                                                    'want to go.', '')
+travel_map = Map('Travel Map', 'You find a map and rooms that you have not seen are on there. You can travel to the '
+                               'rooms by saying travel and then where you want to go.', '')
 info = 'I do not own any Marvel Characters mentioned.'
 
 current_node = m_box
