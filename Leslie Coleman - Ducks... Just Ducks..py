@@ -50,27 +50,28 @@ class Armor(Item):
 
 sword = Weapons('Duck Sword', None, 20, 5, None, None, None)
 shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None)
-chestplate = Armor('Chestplate', True, False, False, False)
-helmet = Armor('Helmet', False, True, False, False)
-boots = Armor('Boots', False, False, True, False)
-pants = Armor('Pants', False, False, False, True)
-        
-        
+chestplate = Armor('Chestplate', True, None, None, None)
+helmet = Armor('Helmet', None, True, None, None)
+boots = Armor('Boots', None, None, True, None)
+pants = Armor('Pants', None, None, None, True)
+
+
 class Map(Item):
     def __init__(self, name, description, location):
         super(Map, self).__init__(name)
         
     def fast_travel(self):
-        print("You open the map and see some rooms that are different. There are 2 rooms that you can travel to from "
-              "certain rooms, Movie Set and Basement.")
+        print("You open the map and see some rooms that are different. There are 3 rooms that you can travel to from "
+              "certain rooms, Movie Set, Basement and Pretty Garden.")
         print()
-        print('The rooms that you can travel to the Movie Set and Basement from are Metal Box, Empty Bedroom, Kitchen, '
-              'Bathroom 1, Grass Field, Barn, \nFancy Bathroom, Pool, '
-              'Library and Classroom. Remember that you can travel back to the room that you came from.')
+        print('The rooms that you can travel to the Movie Set, Basement, and Pretty Garden from are Metal Box, '
+              'Empty Bedroom, Kitchen, Bathroom 1, Grass Field, Barn, \nFancy Bathroom, Pool, Library and Classroom. '
+              'Remember that you can travel back to the room that you came from.')
         print()
         print("Where would you like to travel?")
         room_dictionary = {
             'Movie Set': movieset,
+            'Pretty Garden': garden,
             'Basement': basement,
             'Metal Box': m_box,
             'Empty Bedroom': bedroom,
@@ -93,11 +94,13 @@ class Map(Item):
 
 
 class Character(object):
-    def __init__(self, name, description, dialogue, holding):
+    def __init__(self, name, description, dialogue, dialogue_2, dialogue_3, holding):
         self.name = name
         self.health = 60
         self.description = description
         self.dialogue = dialogue
+        self.dialogue = dialogue_2
+        self.dialogue = dialogue_3
         self.holding = holding
         self.dead = False
 
@@ -124,9 +127,11 @@ class Character(object):
             self.death()
 
 
-Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '')
-Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '')
-Sam = Character('Sam Wilson', 'AKA "Falcon"', '"Look at the wall... Don\'t trust the ducks!" says Sam.', '')
+Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '',
+                       '', '')
+Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '', '')
+Sam = Character('Sam Wilson', 'AKA "Falcon"', '"Look at the wall... Don\'t trust the ducks!" says Sam.', '', '', '')
+player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '')
 
 
 class Room(object):
@@ -158,6 +163,9 @@ BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr
             'and uncle get into a fight. \nYour dad left and took your brother with him and you never saw them again.'
 LISTOFCOMMANDS = 'North, South, East, West, Northwest, Southeast, Southwest, Up, Down, Look, Quit, Party, Travel, ' \
                  'Inventory'
+GARDEN = 'You step into a garden just outside of the mansion, but fenced into its own secluded area. \n' \
+         'The air is filled with the sweet smell of nectar and despite the apparent age of the garden, the flowers ' \
+         'are thriving with splashed of magnificent, vibrant, glorious colors.'
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
 BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see Sam Wilson trapped in a ' \
