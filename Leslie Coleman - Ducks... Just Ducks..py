@@ -12,7 +12,7 @@ class Item(object):
 
 
 class Food(Item):
-    def __init__(self, name, eat):
+    def __init__(self, name, eat, location):
         self.eat = eat
         super(Food, self).__init__(name)
 
@@ -25,7 +25,7 @@ class Food(Item):
 
 
 class Weapons(Item):
-    def __init__(self, name, eat, attack, damage, shrink, splash, spread):
+    def __init__(self, name, eat, attack, damage, shrink, splash, spread, location):
         self.attack = attack
         self.damage = damage
         self.shrink = shrink
@@ -36,24 +36,16 @@ class Weapons(Item):
 
 class Ranged(Weapons):
     def __init__(self, name, attack, damage):
-        super(Ranged, self).__init__(name, None, 20, 2, None, None, None)
+        super(Ranged, self).__init__(name, None, 20, 2, None, None, None, current_node)
 
 
 class Armor(Item):
-    def __init__(self, name, chestplate, helmet, boots, pants):
+    def __init__(self, name, chestplate, helmet, boots, pants, location):
         self.chestplate = chestplate
         self.helmet = helmet
         self.boots = boots
         self.pants = pants
         super(Armor, self).__init__(name)
-
-
-sword = Weapons('Duck Sword', None, 20, 5, None, None, None)
-shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None)
-chestplate = Armor('Chestplate', True, None, None, None)
-helmet = Armor('Helmet', None, True, None, None)
-boots = Armor('Boots', None, None, True, None)
-pants = Armor('Pants', None, None, None, True)
 
 
 class Map(Item):
@@ -130,7 +122,7 @@ class Character(object):
 Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '',
                        '', '')
 Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '', '')
-Sam = Character('Sam Wilson', 'AKA "Falcon"', '"Look at the wall... Don\'t trust the ducks!" says Sam.', '', '', '')
+Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '')
 player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '')
 
 
@@ -169,8 +161,8 @@ GARDEN = 'You step into a garden just outside of the mansion, but fenced into it
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
 BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see Sam Wilson trapped in a ' \
-          'cage. In another corner you see a rubber duck wearing a fedora. \nThere is a path to the west and a ' \
-          'path to the east.'
+          'cage, muttering something about ducks. In another corner you see a rubber duck wearing a fedora. \nThere ' \
+          'is a path to the west and a path to the east.'
 BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
 KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
           '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
@@ -204,8 +196,7 @@ FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is par
 FANBATH2 = 'Welcome back to the fancy bathroom. Please exit to the west or east.'
 POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
        '\nwearing a fedora. There are two paths to the east and to the northwest.'
-POOL2 = 'Welcome back. Sadly the pool is closed. *From a distance* "No it\'s not!" yelled Bucky Barnes Please leave ' \
-        'to the east or northwest.'
+POOL2 = 'Welcome back. Sadly the pool is closed. Please leave to the east or northwest.'
 LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks \nwearing ' \
           'fedoras all over the room. You need to get out either to the west, southeast, or north.'
 LIBRARY2 = 'AHCHOO! The ducks are moving! Get out to the west, southeast, or north!'
@@ -254,6 +245,17 @@ movieset = Room('Movie Set', MOVIESET, '', '', '', '', '', '', '', '', '', '', '
 basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', 'avengers_tower', '', '')
 avengers_tower = Room('Avengers Tower', TOWER, '', '', '', '', '', '', '', '', '', 'basement', '')
 garden = Room('Pretty Garden', GARDEN, '', '', '', '', '', '', '', '', '', '', '')
+
+
+sword = Weapons('Duck Sword', None, 20, 5, None, None, None, cave_2)
+shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None, hole_2)
+chestplate = Armor('Chestplate', True, None, None, None, s_box)
+helmet = Armor('Helmet', None, True, None, None, s_box)
+boots = Armor('Boots', None, None, True, None, s_box)
+pants = Armor('Pants', None, None, None, True, s_box)
+toast = Food('Toast', True, garden)
+avocado = Food('Chip', True, storage_room)
+plums = Food('Plums', True, cave_1)
 
 
 travel_map = Map('Travel Map', 'You find a map and rooms that you have not seen are on there. You can travel to the '
@@ -313,8 +315,6 @@ while is_playing:
         print(LISTOFCOMMANDS)
     else:
         print("That command is not available. Please try again. Thank You.")
-    if current_node == bedroom:
-        print(Sam.dialogue)
 
     # Handling win conditions
     if current_node == party:
