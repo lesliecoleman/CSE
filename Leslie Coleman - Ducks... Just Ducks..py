@@ -166,7 +166,8 @@ BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you 
 BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
 KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
           '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
-KITCHEN2 = 'Welcome back to the kitchen. Go either north, south, east, or west'
+KITCHEN2 = 'Welcome back to the kitchen. You see Wanda Maximoff cooking with Vision Go either north, south, east, ' \
+           'or west'
 HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to the south.'
 HOLE_1_2 = 'You are back in the hole. There is a path to the south'
 CAVE_1 = 'You enter a dirt cave with one torch on the floor. There is two paths to the east and north.'
@@ -216,8 +217,8 @@ PARTY = 'You had just defeated the ducks. You walk into a party room to celebrat
         'job.'
 MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
 BASEMENT = 'Hey!!! It\'s a basement!!!! And Loki is here!!!! Go up and discover a secret.'
-TOWER = 'WOW! It\'s the Avengers Tower. That\'s where they came from. Go down to head back to the basement. Pepper ' \
-        'Pots is walking around trying to figure out where everyone went.'
+COMPOUND = 'WOW! It\'s the Avengers Compound. That\'s where they came from. Go down to head back to the basement. ' \
+           'Pepper Pots is walking around trying to figure out where everyone went.'
 
 
 m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '')
@@ -242,8 +243,8 @@ large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'par
                      '', '')
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
 movieset = Room('Movie Set', MOVIESET, '', '', '', '', '', '', '', '', '', '', '')
-basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', 'avengers_tower', '', '')
-avengers_tower = Room('Avengers Tower', TOWER, '', '', '', '', '', '', '', '', '', 'basement', '')
+basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', 'avengers_compound', '', '')
+avengers_compound = Room('Avengers compound', COMPOUND, '', '', '', '', '', '', '', '', '', 'basement', '')
 garden = Room('Pretty Garden', GARDEN, '', '', '', '', '', '', '', '', '', '', '')
 
 
