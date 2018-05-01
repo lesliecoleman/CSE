@@ -2,30 +2,35 @@ class Item(object):
     def __init__(self, name):
         self.name = name
 
-    def take(self):
-        if len(player_inv) < 15:
+    def take(self, player, room):
+        if len(player.inventory) < 15:
             print("You grab the %s" % self.name)
-            player_inv.append(self)
+            player.inventory.append(self)
+            room.inventory.remove(self)
 
-        elif len(player_inv) == 15:
+        elif len(player.inventory) == 15:
             print("You don't have space to pick up the %s" % self.name)
 
+    def dropped(self, player, room):
+        print('You drop the item')
+        player.inventory.remove(self)
+        room.inventory.append(self)
 
 class Food(Item):
-    def __init__(self, name, eat, location):
+    def __init__(self, name, eat):
         self.eat = eat
         super(Food, self).__init__(name)
 
     def eat(self):
         if self.eat:
             print("You eat the %s. Weird." % self.name)
-            player_inv.remove(self)
+            player.inventory.remove(self)
         else:
             print("You can not eat that. That's weird.")
 
 
 class Weapons(Item):
-    def __init__(self, name, eat, attack, damage, shrink, splash, spread, location):
+    def __init__(self, name, eat, attack, damage, shrink, splash, spread):
         self.attack = attack
         self.damage = damage
         self.shrink = shrink
@@ -36,11 +41,11 @@ class Weapons(Item):
 
 class Ranged(Weapons):
     def __init__(self, name, attack, damage):
-        super(Ranged, self).__init__(name, None, 20, 2, None, None, None, current_node)
+        super(Ranged, self).__init__(name, None, 20, 2, None, None, None)
 
 
 class Armor(Item):
-    def __init__(self, name, chestplate, helmet, boots, pants, location):
+    def __init__(self, name, chestplate, helmet, boots, pants):
         self.chestplate = chestplate
         self.helmet = helmet
         self.boots = boots
@@ -49,7 +54,7 @@ class Armor(Item):
 
 
 class Map(Item):
-    def __init__(self, name, description, location):
+    def __init__(self, name, description):
         super(Map, self).__init__(name)
         
     def fast_travel(self):
@@ -85,8 +90,19 @@ class Map(Item):
             print('Sadly that room does not exist on the map.')
 
 
+sword = Weapons('Duck Sword', None, 20, 5, None, None, None)
+shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None)
+chestplate = Armor('Chestplate', True, None, None, None)
+helmet = Armor('Helmet', None, True, None, None)
+boots = Armor('Boots', None, None, True, None)
+pants = Armor('Pants', None, None, None, True)
+toast = Food('Toast', True)
+avocado = Food('Chip', True)
+plums = Food('Plums', True)
+
+
 class Character(object):
-    def __init__(self, name, description, dialogue, dialogue_2, dialogue_3, holding):
+    def __init__(self, name, description, dialogue, dialogue_2, dialogue_3, holding, items=None):
         self.name = name
         self.health = 60
         self.description = description
@@ -94,13 +110,20 @@ class Character(object):
         self.dialogue = dialogue_2
         self.dialogue = dialogue_3
         self.holding = holding
+        self.inventory = items
         self.dead = False
 
-    def pick_up(self):
-        if self.holding:
+    def pick_up(self, item, room):
+        if self.pick_up(stuff, current_node):
             print("You can not pick up this item at this time. Please try again later. Thank you.")
         else:
-            print("You pick up the item.")
+            item.take(self, room)
+
+    def drop(self, item, room):
+        if not self.pick_up(stuff, current_node):
+            print("You can't drop the item.")
+        else:
+            item.dropped(self, room)
 
     def attack(self, target):
         print("%s attacks %s" % (self.name, target.name))
@@ -120,15 +143,15 @@ class Character(object):
 
 
 Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '',
-                       '', '')
-Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '', '')
-Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '')
-player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '')
+                       '', '', [])
+Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '', '', [])
+Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '', [])
+player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '', [])
 
 
 class Room(object):
     def __init__(self, name, description, description2, north, south, east, west, northwest, southeast, southwest, up,
-                 down, walls):
+                 down, walls, items=None):
         self.name = name
         self.description = description
         self.description2 = description2
@@ -142,6 +165,7 @@ class Room(object):
         self.up = up
         self.down = down
         self.walls = walls
+        self.inventory = items
         self.visited = False
 
     def move(self, direction):
@@ -180,7 +204,7 @@ HOLE_2_2 = 'You are back in the deep hole and there is a path to the northwest.'
 CAVE_2 = 'You are in another dirt cave. There is two paths to the southwest and southeast.'
 CAVE_2_2 = 'You re-enter the dirt cave. There is two paths to the southwest and southeast.'
 STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, \nthere is a cardboard box. ' \
-          'It seems to be partially open. There is a path to the north.'
+          'It seems to be partially open. There is a path to the north. There is an avocado here.'
 STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'
 S_BOX = 'You are now in a steel box. There is a path to the north and one to the west.'
 GRASS = 'You leave the bathroom and you are now in a grassy field. To the north and to the east \nthere ' \
@@ -229,7 +253,7 @@ cave_1 = Room('Cave', CAVE_1, '', 'hole', '', 'm_box', '', '', '', '', '', '', '
 bathroom_1 = Room('Bathroom', BATH_1, BATH_1_2, '', 'storage_room', 'grass_field', 'kitchen', '', '', '', '', '', '')
 hole_2 = Room('Hole', HOLE_2, '', '', '', '', '', 'cave_2', '', '', '', '', '')
 cave_2 = Room('Cave', CAVE_2, '', '', '', '', '', '', 'hole_2', 'bedroom', '', '', '')
-storage_room = Room('Storage Room', STORAGE, STORAGE2, 'bathroom_1', '', '', '', '', '', '', '', '', '')
+storage_room = Room('Storage Room', STORAGE, STORAGE2, 'bathroom_1', '', '', '', '', '', '', '', '', '', [avocado])
 s_box = Room('Box', S_BOX, '', 'kitchen', '', '', 'm_box', '', '', '', '', '', '')
 grass_field = Room('Grass Field', GRASS, GRASS2, '', 'barn', '', 'bathroom_1', '', '', '', '', '', '')
 barn = Room('Barn', BARN, BARN2, 'grass_field', '', '', 'fancy_bath', '', '', '', '', '', '')
@@ -248,19 +272,8 @@ avengers_compound = Room('Avengers compound', COMPOUND, '', '', '', '', '', '', 
 garden = Room('Pretty Garden', GARDEN, '', '', '', '', '', '', '', '', '', '', '')
 
 
-sword = Weapons('Duck Sword', None, 20, 5, None, None, None, cave_2)
-shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None, hole_2)
-chestplate = Armor('Chestplate', True, None, None, None, s_box)
-helmet = Armor('Helmet', None, True, None, None, s_box)
-boots = Armor('Boots', None, None, True, None, s_box)
-pants = Armor('Pants', None, None, None, True, s_box)
-toast = Food('Toast', True, garden)
-avocado = Food('Chip', True, storage_room)
-plums = Food('Plums', True, cave_1)
-
-
 travel_map = Map('Travel Map', 'You find a map and rooms that you have not seen are on there. You can travel to the '
-                               'rooms by saying travel and then where you want to go.', '')
+                               'rooms by saying travel and then where you want to go.')
 info = 'I do not own any Marvel Characters mentioned.'
 
 current_node = m_box
@@ -273,7 +286,7 @@ print(BACKSTORY)
 print()
 print(info)
 
-player_inv = [travel_map]
+player.inventory = [travel_map]
 
 
 while is_playing:
@@ -296,9 +309,17 @@ while is_playing:
 
     # Process input
     if command == 'party':
-        print('Sorry you can not party yet. Beat the ducks and then you can celebrate brave adventurer.')
+        print('Sorry you can not party yet. Beat the ducks and then you can celebrate soldier.')
+    elif command[:7] == 'pick up':
+        item = command[8:]
+        for stuff in current_node.inventory:
+            if item == stuff.name:
+                player.pick_up(stuff, current_node)
+    elif command[:4] == 'drop':
+        item = command[5:]
+
     elif command == 'inventory':
-        for item in player_inv:
+        for item in player.inventory:
             print()
             print(item.name)
     elif command in directions:
