@@ -96,13 +96,14 @@ chestplate = Armor('Chestplate', True, None, None, None)
 helmet = Armor('Helmet', None, True, None, None)
 boots = Armor('Boots', None, None, True, None)
 pants = Armor('Pants', None, None, None, True)
-toast = Food('Toast', True)
+toast = Food('Jo', True)
 avocado = Food('Chip', True)
-plums = Food('Plums', True)
+plums = Food('Plums from ', True)
+mac_n_burger = Food('Mac n\' Burger', True)
 
 
 class Character(object):
-    def __init__(self, name, description, dialogue, dialogue_2, dialogue_3, holding, items=None):
+    def __init__(self, name, description, dialogue, dialogue_2, dialogue_3, damage, attack,  holding, items=None):
         self.name = name
         self.health = 60
         self.description = description
@@ -112,6 +113,8 @@ class Character(object):
         self.holding = holding
         self.inventory = items
         self.dead = False
+        self.damage = damage
+        self.attack = attack
 
     def pick_up(self, item, room):
         if self.pick_up(stuff, current_node):
@@ -143,10 +146,11 @@ class Character(object):
 
 
 Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '',
-                       '', '', [])
-Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '', '', [])
-Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '', [])
-player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '', [])
+                       '', '', [], '', '')
+Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '', '', [],
+                    '', '')
+Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '', [], '', '')
+player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '', [], '', '')
 
 
 class Room(object):
@@ -240,7 +244,8 @@ PARTY = 'You had just defeated the ducks. You walk into a party room to celebrat
         '\nwith all the people who live in the house and Bruce Banner. Congrats on beating the game. You did a nice ' \
         'job.'
 MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
-BASEMENT = 'Hey!!! It\'s a basement!!!! And Loki is here!!!! Go up and discover a secret.'
+BASEMENT = 'Hey!!! It\'s a basement!!!! And Lo ki is here!!!! Go up and discover a secret. Bucky is here sitting in ' \
+           'the middle of the room eating Plums. He has offered some to you. Take them if you want.'
 COMPOUND = 'WOW! It\'s the Avengers Compound. That\'s where they came from. Go down to head back to the basement. ' \
            'Pepper Pots is walking around trying to figure out where everyone went.'
 
@@ -317,7 +322,9 @@ while is_playing:
                 player.pick_up(stuff, current_node)
     elif command[:4] == 'drop':
         item = command[5:]
-
+        for stuff in current_node.inventory:
+            if item == stuff.name:
+                player.drop(stuff, current_node)
     elif command == 'inventory':
         for item in player.inventory:
             print()
