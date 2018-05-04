@@ -98,7 +98,7 @@ boots = Armor('Boots', None, None, True, None)
 pants = Armor('Pants', None, None, None, True)
 toast = Food('Jo', True)
 avocado = Food('Chip', True)
-plums = Food('Plums from ', True)
+plums = Food('Plums from Romania', True)
 mac_n_burger = Food('Mac n\' Burger', True)
 
 
@@ -151,6 +151,7 @@ Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horr
                     '', '')
 Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '', [], '', '')
 player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '', [], '', '')
+bucky = Character('Bucky Barnes', '')
 
 
 class Room(object):
