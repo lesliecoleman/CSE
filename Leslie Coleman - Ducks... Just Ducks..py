@@ -103,13 +103,11 @@ mac_n_burger = Food('Mac n\' Burger', True)
 
 
 class Character(object):
-    def __init__(self, name, description, dialogue, dialogue_2, dialogue_3, damage, attack,  holding, items=None):
+    def __init__(self, name, description, dialogue, damage, attack,  holding, items=None):
         self.name = name
         self.health = 60
         self.description = description
         self.dialogue = dialogue
-        self.dialogue = dialogue_2
-        self.dialogue = dialogue_3
         self.holding = holding
         self.inventory = items
         self.dead = False
@@ -146,12 +144,12 @@ class Character(object):
 
 
 Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Might also be someone you know)', '', '',
-                       '', '', [], '', '')
-Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '', '', [],
-                    '', '')
-Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '', [], '', '')
-player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '', [], '', '')
-bucky = Character('Bucky Barnes', '')
+                       '', '', [])
+Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '',
+                    '', [])
+Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '', [])
+player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '', [])
+bucky = Character('Bucky Barnes', '', '"Would you like some plums. I don\'t mind it you take some."', '', '', '', [])
 
 
 class Room(object):
@@ -184,6 +182,9 @@ BACKSTORY = 'You are heading over to your Uncle Wiebe\'s house with your dad, Mr
             'and uncle get into a fight. \nYour dad left and took your brother with him and you never saw them again.'
 LISTOFCOMMANDS = 'North, South, East, West, Northwest, Southeast, Southwest, Up, Down, Look, Quit, Party, Travel, ' \
                  'Inventory, Commands'
+EPILOGUE: 'After defeating the ducks you rescue your brother and head to the party. Your dad was taken away and your ' \
+         'brother and you went to live with your uncle. \nAll is well again. Next time you hope you have backup from ' \
+          'your friends... The Avengers.'
 GARDEN = 'You step into a garden just outside of the mansion, but fenced into its own secluded area. \n' \
          'The air is filled with the sweet smell of nectar and despite the apparent age of the garden, the flowers ' \
          'are thriving with splashed of magnificent, vibrant, glorious colors.'
@@ -195,7 +196,7 @@ BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you 
 BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
 KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
           '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
-KITCHEN2 = 'Welcome back to the kitchen. You see Wanda Maximoff cooking with Vision Go either north, south, east, ' \
+KITCHEN2 = 'Welcome back to the kitchen. You see Wanda Maximoff cooking with Vision. Go either north, south, east, ' \
            'or west'
 HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to the south.'
 HOLE_1_2 = 'You are back in the hole. There is a path to the south'
@@ -245,14 +246,16 @@ PARTY = 'You had just defeated the ducks. You walk into a party room to celebrat
         '\nwith all the people who live in the house and Bruce Banner. Congrats on beating the game. You did a nice ' \
         'job.'
 MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
-BASEMENT = 'Hey!!! It\'s a basement!!!! And Lo ki is here!!!! Go up and discover a secret. Bucky is here sitting in ' \
-           'the middle of the room eating Plums. He has offered some to you. Take them if you want.'
+BASEMENT = 'Hey!!! It\'s a basement!!!! And Loki is here!!!! Go up and discover a secret. Bucky is here sitting in ' \
+           'the middle of the room eating Plums.'
 COMPOUND = 'WOW! It\'s the Avengers Compound. That\'s where they came from. Go down to head back to the basement. ' \
            'Pepper Pots is walking around trying to figure out where everyone went.'
 
 
 m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '')
-bedroom = Room('Empty Bedroom', BEDROOM, BEDROOM2, '', '', 'kitchen', 'hole', '', '', '', '', '', '')
+bedroom = Room('Empty Bedroom', BEDROOM, BEDROOM2, '', '', 'kitchen', 'hole', '', '', '', '', '', '', [chestplate,
+                                                                                                       boots, pants,
+                                                                                                       helmet])
 kitchen = Room('Kitchen', KITCHEN, KITCHEN2, 'hole_2', 's_box', 'bathroom_1', 'bedroom', '', '', '', '', '', '')
 hole = Room('Hole', HOLE_1, '', '', 'cave_1', '', '', '', '', '', '', '', '')
 cave_1 = Room('Cave', CAVE_1, '', 'hole', '', 'm_box', '', '', '', '', '', '', '')
@@ -263,7 +266,7 @@ storage_room = Room('Storage Room', STORAGE, STORAGE2, 'bathroom_1', '', '', '',
 s_box = Room('Box', S_BOX, '', 'kitchen', '', '', 'm_box', '', '', '', '', '', '')
 grass_field = Room('Grass Field', GRASS, GRASS2, '', 'barn', '', 'bathroom_1', '', '', '', '', '', '')
 barn = Room('Barn', BARN, BARN2, 'grass_field', '', '', 'fancy_bath', '', '', '', '', '', '')
-fancy_bath = Room('Fancy Bathroom', FANBATH, FANBATH2, '', '', 'barn', 'pool', '', '', '', '', '', '')
+fancy_bath = Room('Fancy Bathroom', FANBATH, FANBATH2, '', '', 'barn', 'pool', '', '', '', '', '', '', [mac_n_burger])
 pool = Room('Pool', POOL, POOL2, '', '', 'fancy_bath', '', 'library', '', '', '', '', '')
 library = Room('Library', LIBRARY, LIBRARY2, 'm_box', '', '', 'classroom', '', 'pool', '', '', '', '')
 classroom = Room('Classroom', CLASS, CLASS2, '', '', 'library', '', '', '', '', '', 'marker_storage', '')
@@ -273,9 +276,9 @@ large_storage = Room('Large Storage Room', LARSTORAGE, LARSTORAGE2, '', '', 'par
                      '', '')
 party = Room('Party Central 101', PARTY, '', '', '', '', '', '', '', '', '', '', '')
 movieset = Room('Movie Set', MOVIESET, '', '', '', '', '', '', '', '', '', '', '')
-basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', 'avengers_compound', '', '')
+basement = Room('Basement', BASEMENT, '', '', '', '', '', '', '', '', 'avengers_compound', '', '', [plums])
 avengers_compound = Room('Avengers compound', COMPOUND, '', '', '', '', '', '', '', '', '', 'basement', '')
-garden = Room('Pretty Garden', GARDEN, '', '', '', '', '', '', '', '', '', '', '')
+garden = Room('Pretty Garden', GARDEN, '', '', '', '', '', '', '', '', '', '', '', [toast])
 
 
 travel_map = Map('Travel Map', 'You find a map and rooms that you have not seen are on there. You can travel to the '
@@ -345,6 +348,10 @@ while is_playing:
         print(LISTOFCOMMANDS)
     else:
         print("That command is not available. Please try again. Thank You.")
+    if current_node == basement:
+        print()
+        print(bucky.name)
+        print(bucky.dialogue)
 
     # Handling win conditions
     if current_node == party:
