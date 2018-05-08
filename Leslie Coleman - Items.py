@@ -47,5 +47,54 @@ class Armor(Item):
         self.pants = pants
         super(Armor, self).__init__(name)
 
+class Map(Item):
+    def __init__(self, name, description):
+        super(Map, self).__init__(name)
+
+    def fast_travel(self):
+        print('*******************************************************************************************************')
+        print("You open the map and see some rooms that are different. There are 3 rooms that you can travel to from "
+              "certain rooms, Movie Set, Basement and Pretty Garden.")
+        print()
+        print('The rooms that you can travel to the Movie Set, Basement, and Pretty Garden from are Metal Box, '
+              'Empty Bedroom, Kitchen, Bathroom 1, Grass Field, Barn, \nFancy Bathroom, Pool, Library and Classroom. '
+              'Remember that you can travel back to the room that you came from.')
+        print()
+        print("Where would you like to travel?")
+        print('*******************************************************************************************************')
+    room_dictionary = {
+        'Movie Set': movieset,
+        'Pretty Garden': garden,
+        'Basement': basement,
+                }
+    teleport = input(">_")
+    if teleport in room_dictionary:
+        print('***************************************************************************************************')
+        print("You are now in(at) the %s" % teleport)
+        print('***************************************************************************************************')
+        global current_node
+        current_node = room_dictionary[teleport]
+    else:
+        print('***************************************************************************************************')
+        print('Sadly that room does not exist on the map.')
+        print('***************************************************************************************************')
+
+
+sword = Weapons('Duck Sword', None, 20, 5, None, None, None)
+shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None)
+chestplate = Armor('Chestplate', True, None, None, None)
+helmet = Armor('Helmet', None, True, None, None)
+boots = Armor('Boots', None, None, True, None)
+pants = Armor('Pants', None, None, None, True)
+toast = Food('Jo', True)
+avocado = Food('Chip', True)
+plums = Food('Plums from Romania', True)
+mac_n_burger = Food('Mac n\' Burger', True)
+
+movieset = ()
+garden = ()
+basement = ()
+
+
 
 player_inv = []

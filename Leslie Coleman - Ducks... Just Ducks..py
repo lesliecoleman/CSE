@@ -4,15 +4,21 @@ class Item(object):
 
     def take(self, player, room):
         if len(player.inventory) < 15:
+            print('***************************************************************************************************')
             print("You grab the %s" % self.name)
+            print('***************************************************************************************************')
             player.inventory.append(self)
             room.inventory.remove(self)
 
         elif len(player.inventory) == 15:
+            print('***************************************************************************************************')
             print("You don't have space to pick up the %s" % self.name)
+            print('***************************************************************************************************')
 
     def dropped(self, player, room):
+        print('*******************************************************************************************************')
         print('You drop the item')
+        print('*******************************************************************************************************')
         player.inventory.remove(self)
         room.inventory.append(self)
 
@@ -23,10 +29,14 @@ class Food(Item):
 
     def eat(self):
         if self.eat:
+            print('***************************************************************************************************')
             print("You eat the %s. Weird." % self.name)
+            print('***************************************************************************************************')
             player.inventory.remove(self)
         else:
+            print('***************************************************************************************************')
             print("You can not eat that. That's weird.")
+            print('---------------------------------------------------------------------------------------------------')
 
 
 class Weapons(Item):
@@ -58,6 +68,7 @@ class Map(Item):
         super(Map, self).__init__(name)
         
     def fast_travel(self):
+        print('*******************************************************************************************************')
         print("You open the map and see some rooms that are different. There are 3 rooms that you can travel to from "
               "certain rooms, Movie Set, Basement and Pretty Garden.")
         print()
@@ -66,6 +77,7 @@ class Map(Item):
               'Remember that you can travel back to the room that you came from.')
         print()
         print("Where would you like to travel?")
+        print('*******************************************************************************************************')
         room_dictionary = {
             'Movie Set': movieset,
             'Pretty Garden': garden,
@@ -83,11 +95,15 @@ class Map(Item):
         }
         teleport = input(">_")
         if teleport in room_dictionary:
+            print('***************************************************************************************************')
             print("You are now in(at) the %s" % teleport)
+            print('***************************************************************************************************')
             global current_node
             current_node = room_dictionary[teleport]
         else:
+            print('***************************************************************************************************')
             print('Sadly that room does not exist on the map.')
+            print('***************************************************************************************************')
 
 
 sword = Weapons('Duck Sword', None, 20, 5, None, None, None)
@@ -289,28 +305,34 @@ current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
+print('***************************************************************************************************************')
 print(LISTOFCOMMANDS)
 print()
 print(BACKSTORY)
 print()
 print(info)
-
+print('***************************************************************************************************************')
+print('Let\'s begin our adventure...')
 player.inventory = [travel_map]
 
 
 while is_playing:
     # Rom information
-    print()
+    print('***********************************************************************************************************')
     print(current_node.name)
     if not current_node.visited:
         print(current_node.description)
+    print('***********************************************************************************************************')
+
 
     # Input
     command = input('>_').lower().strip()
 
     # Pre-processing
     if command == 'quit':
+        print('*******************************************************************************************************')
         print('I am sorry this was hard. I wish you would continue.')
+        print('*******************************************************************************************************')
         exit(0)
     elif command in short_directions:
         pos = short_directions.index(command)
@@ -318,7 +340,9 @@ while is_playing:
 
     # Process input
     if command == 'party':
-        print('Sorry you can not party yet. Beat the ducks and then you can celebrate soldier.')
+        print('*******************************************************************************************************')
+        print('Sorry you can not party yet. Beat the ducks and then you can celebrate adventurer.')
+        print('*******************************************************************************************************')
     elif command[:7] == 'pick up':
         item = command[8:]
         for stuff in current_node.inventory:
@@ -338,7 +362,9 @@ while is_playing:
             current_node.visited = True
             current_node.move(command)
         except KeyError:
+            print('***************************************************************************************************')
             print("This way is not available. Please try again. Thank You")
+            print('***************************************************************************************************')
     elif command == 'travel':
         travel_map.fast_travel()
     elif command == 'look':
@@ -347,7 +373,9 @@ while is_playing:
     elif command == 'commands':
         print(LISTOFCOMMANDS)
     else:
+        print('*******************************************************************************************************')
         print("That command is not available. Please try again. Thank You.")
+        print('*******************************************************************************************************')
     if current_node == basement:
         print()
         print(bucky.name)
@@ -355,6 +383,11 @@ while is_playing:
 
     # Handling win conditions
     if current_node == party:
+        print('*******************************************************************************************************')
         print(current_node.name)
         print(current_node.description)
+        print()
+        print(EPILOGUE)
+        print('*******************************************************************************************************')
         is_playing = False
+
