@@ -311,6 +311,8 @@ is_playing = True
 
 response = input('Would you like instructions? yes/no')
 if response.lower() == 'yes':
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+          '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     print("Welcome. Here is some basic information."
           "\nBelow is a list of commands and directions. You also have short directions."
           "\nCommands:"
