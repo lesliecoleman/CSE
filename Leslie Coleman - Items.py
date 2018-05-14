@@ -47,6 +47,68 @@ class Armor(Item):
         self.pants = pants
         super(Armor, self).__init__(name)
 
+
+class key_items(Item):
+    def __init__(self):
+        super(key_items, self).__init__(key_items)
+
+        def take(self):
+            if player_inv < 15:
+                print("You grab the %s" % self.name)
+                player_inv.append(self)
+
+            elif player_inv == 15:
+                print("You don't have space to pick up the %s" % self.name)
+
+
+class Archery(key_items):
+    def __init__(self, name, attack, damage):
+        super(Archery, self).__init__()
+        self.attack = attack
+        self.damage = damage
+
+        def attack(self, target):
+            print("%s attacks %s" % (self.name, target.name))
+            target.damage()
+
+        def damage(self):
+            self.health -= 1
+            if self.health >= 1:
+                print("%s has %s health" % (self.name, self.health))
+            else:
+                self.death()
+
+
+class Bow(Archery):
+    def __init__(self):
+        super(Bow, self).__init__('Jeffery', 40, 1)
+
+
+class Sword(Weapons):
+    def __init__(self):
+        super(Sword, self).__init__('Thanos', False, 100, 100, False, False, False)
+
+class Knife(Weapons):
+    def __init__(self):
+        super(Knife, self).__init__('Hero', False, 20, 20, False, False, False)
+
+        
+class Drink(Item):
+    def __init__(self):
+        super(Drink, self).__init__('Water')
+
+    def drink(self):
+        if self.drink:
+            print("You drink the %s" % self.name)
+            player_inv.remove(self)
+
+
+
+class Other_wearables(key_items):
+    def __init__(self):
+        super(Other_wearables, self).__init__()
+
+
 class Map(Item):
     def __init__(self, name, description):
         super(Map, self).__init__(name)

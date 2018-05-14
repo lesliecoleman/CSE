@@ -63,6 +63,37 @@ class Armor(Item):
         super(Armor, self).__init__(name)
 
 
+class key_items(Item):
+    def __init__(self):
+        super(key_items, self).__init__(key_items)
+
+        def take(self):
+            if player.inventory < 15:
+                print("You grab the %s" % self.name)
+                player.inventory.append(self)
+
+            elif player.inventory == 15:
+                print("You don't have space to pick up the %s" % self.name)
+
+
+class Archery(key_items):
+    def __init__(self, name, attack, damage):
+        super(Archery, self).__init__()
+        self.attack = attack
+        self.damage = damage
+
+        def attack(self, target):
+            print("%s attacks %s" % (self.name, target.name))
+            target.damage()
+
+        def damage(self):
+            self.health -= 1
+            if self.health >= 1:
+                print("%s has %s health" % (self.name, self.health))
+            else:
+                self.death()
+
+
 class Map(Item):
     def __init__(self, name, description):
         super(Map, self).__init__(name)
