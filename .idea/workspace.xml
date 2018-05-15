@@ -27,8 +27,18 @@
       <file leaf-file-name="Leslie Coleman - Ducks... Just Ducks..py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - Ducks... Just Ducks..py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+            <state relative-caret-position="-1253">
+              <caret line="380" column="71" lean-forward="true" selection-start-line="380" selection-start-column="71" selection-end-line="380" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Leslie Coleman - Ducks... Just Ducks4..py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Leslie Coleman - Ducks... Just Ducks4..py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,18 +57,18 @@
       <file leaf-file-name="Leslie Coleman - Characters.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - Characters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="629">
               <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="42" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Leslie Coleman - Items.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Leslie Coleman - Items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Leslie Coleman - Items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+            <state relative-caret-position="362">
+              <caret line="108" column="47" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="108" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -117,8 +127,8 @@
         <option value="$PROJECT_DIR$/Leslie Coleman - CYOA.py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - World Map OOP.py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - Characters.py" />
-        <option value="$PROJECT_DIR$/Leslie Coleman - Ducks... Just Ducks..py" />
         <option value="$PROJECT_DIR$/Leslie Coleman - Items.py" />
+        <option value="$PROJECT_DIR$/Leslie Coleman - Ducks... Just Ducks..py" />
       </list>
     </option>
   </component>
@@ -279,8 +289,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Leslie Coleman - Ducks... Just Ducks." />
+        <item index="0" class="java.lang.String" itemvalue="Python.Leslie Coleman - Ducks... Just Ducks." />
+        <item index="1" class="java.lang.String" itemvalue="Python.Leslie Coleman - Characters" />
         <item index="2" class="java.lang.String" itemvalue="Python.Leslie Coleman - CYOA" />
         <item index="3" class="java.lang.String" itemvalue="Python.Fast Travel Testing - Leslie Coleman" />
         <item index="4" class="java.lang.String" itemvalue="Python.Leslie Coleman - Guess Game" />
@@ -309,7 +319,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.4564184" sideWeight="0.5087848" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13946117" sideWeight="0.49121523" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08399366" sideWeight="0.49121523" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -354,13 +364,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Notes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="138" column="16" lean-forward="false" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Lucky7s.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -683,24 +686,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Characters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="629">
           <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="42" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Ducks... Just Ducks..py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Leslie Coleman - Items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+        <state relative-caret-position="362">
+          <caret line="108" column="47" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="108" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Ducks... Just Ducks..py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1253">
+          <caret line="380" column="71" lean-forward="true" selection-start-line="380" selection-start-column="71" selection-end-line="380" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Leslie Coleman - Ducks... Just Ducks4..py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -92,7 +92,7 @@ class Knife(Weapons):
     def __init__(self):
         super(Knife, self).__init__('Hero', False, 20, 20, False, False, False)
 
-        
+
 class Drink(Item):
     def __init__(self):
         super(Drink, self).__init__('Water')
