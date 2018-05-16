@@ -166,7 +166,7 @@ class Map(Item):
             print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
 
-sword = Weapons('Duck Sword', None, 20, 5, None, None, None)
+sword = Sword()
 shrink_ray = Weapons('Shrink Ray', None, 15, 7, True, None, None)
 chestplate = Armor('Chestplate', True, None, None, None)
 helmet = Armor('Helmet', None, True, None, None)
@@ -225,12 +225,11 @@ Giant_Duck = Character('Giant Duck', 'A giant duck that you need to defeat. (Mig
                        '', '', [])
 Mr_Wybe = Character('Mr. Wybe', 'HYDRA Agent, Your Father, and a completely horrible parent.', '', '', '',
                     '', [])
-Sam = Character('Sam Wilson', 'AKA "Falcon"', '', '', '', '', [])
 player = Character('Mister Sir Man', 'Loving kid, smart, and adventurous.', '', '', '', '', [])
 bucky = Character('Bucky Barnes', 'Your best friend and would protect you from anything.', '"Would you like some '
                                                                                            'plums. I don\'t mind it '
                                                                                            'you take some."', '', '',
-                  '', [plums])
+                                                                                           '', [plums])
 
 
 class Room(object):
@@ -270,8 +269,8 @@ GARDEN = 'You step into a garden just outside of the mansion, but fenced into it
 M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
 M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
 BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see Sam Wilson trapped in a ' \
-          'cage, muttering something about ducks. \nIn another corner you see a rubber duck wearing a fedora. \nThere ' \
-          'is a path to the west and a path to the east.'
+          'cage, muttering something about ducks. \nIn another corner you see a rubber duck wearing a fedora. ' \
+          '\nThere is a path to the west and a path to the east.'
 BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
 KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
           '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
