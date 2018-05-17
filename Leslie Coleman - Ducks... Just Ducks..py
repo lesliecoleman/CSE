@@ -9,7 +9,6 @@ class Item(object):
             print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
             player.inventory.append(self)
             room.inventory.remove(self)
-
         elif len(player.inventory) == 15:
             print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
             print("You don't have space to pick up the %s" % self.name)
@@ -23,7 +22,7 @@ class Item(object):
         room.inventory.append(self)
 
 class Food(Item):
-    def __init__(self, name, eat):
+    def __init__(self, name, eat, description):
         self.eat = eat
         super(Food, self).__init__(name)
 
@@ -172,12 +171,12 @@ chestplate = Armor('Chestplate', True, None, None, None)
 helmet = Armor('Helmet', None, True, None, None)
 boots = Armor('Boots', None, None, True, None)
 pants = Armor('Pants', None, None, None, True)
-toast = Food('Jo', True)
-avocado = Food('Chip', True)
-avocado2 = Food('Another Avocado', True)
-plums = Food('Plums from Romania', True)
-mac_n_burger = Food('Mac n\' Burger', True)
-half_eaten_sandwich = Food('Old sandwich', True)
+toast = Food('Jo', True, '')
+avocado = Food('Chip', True, '')
+avocado2 = Food('Another Avocado', True, '')
+plums = Food('Plums from Romania', True, '')
+mac_n_burger = Food('Mac n\' Burger', True, '')
+half_eaten_sandwich = Food('sandwich', True, 'On the shelf there is a half-eaten sandwich')
 
 
 class Character(object):
@@ -338,7 +337,8 @@ bedroom = Room('Empty Bedroom', BEDROOM, BEDROOM2, '', '', 'kitchen', 'hole', ''
 kitchen = Room('Kitchen', KITCHEN, KITCHEN2, 'hole_2', 's_box', 'bathroom_1', 'bedroom', '', '', '', '', '', '')
 hole = Room('Hole', HOLE_1, '', '', 'cave_1', '', '', '', '', '', '', '', '')
 cave_1 = Room('Cave', CAVE_1, '', 'hole', '', 'm_box', '', '', '', '', '', '', '')
-bathroom_1 = Room('Bathroom', BATH_1, BATH_1_2, '', 'storage_room', 'grass_field', 'kitchen', '', '', '', '', '', '')
+bathroom_1 = Room('Bathroom', BATH_1, BATH_1_2, '', 'storage_room', 'grass_field', 'kitchen', '', '', '', '', '', '',
+                  [half_eaten_sandwich])
 hole_2 = Room('Hole', HOLE_2, '', '', '', '', '', 'cave_2', '', '', '', '', '')
 cave_2 = Room('Cave', CAVE_2, '', '', '', '', '', '', 'hole_2', 'bedroom', '', '', '')
 storage_room = Room('Storage Room', STORAGE, STORAGE2, 'bathroom_1', '', '', '', '', '', '', '', '', '', [avocado])
@@ -364,7 +364,7 @@ travel_map = Map('Travel Map', 'You find a map and rooms that you have not seen 
                                'rooms by saying travel and then where you want to go.')
 info = 'I do not own any Marvel Characters mentioned.'
 
-current_node = m_box
+current_node = bathroom_1
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
@@ -438,7 +438,9 @@ while is_playing:
         print('Sorry you can not party yet. Beat the ducks and then you can celebrate adventurer.')
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     elif command[:7] == 'pick up':
+        print(';')
         item = command[8:]
+        print(';')
         for stuff in current_node.inventory:
             if item == stuff.name:
                 player.pick_up(stuff, current_node)
