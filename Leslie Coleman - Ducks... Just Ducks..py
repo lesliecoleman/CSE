@@ -171,16 +171,16 @@ chestplate = Armor('Chestplate', True, None, None, None)
 helmet = Armor('Helmet', None, True, None, None)
 boots = Armor('Boots', None, None, True, None)
 pants = Armor('Pants', None, None, None, True)
-toast = Food('Jo', True, '')
-avocado = Food('Chip', True, '')
-avocado2 = Food('Another Avocado', True, '')
-plums = Food('Plums from Romania', True, '')
-mac_n_burger = Food('Mac n\' Burger', True, '')
+toast = Food('toast', True, '')
+avocado = Food('avocado', True, '')
+avocado2 = Food('avocado', True, '')
+plums = Food('plums', True, '')
+mac_n_burger = Food('burger', True, '')
 half_eaten_sandwich = Food('sandwich', True, 'On the shelf there is a half-eaten sandwich')
 
 
 class Character(object):
-    def __init__(self, name, description, dialogue, damage, attack,  holding, items=None):
+    def __init__(self, name, description, dialogue, damage, attack,  holding, items=[]):
         self.name = name
         self.health = 60
         self.description = description
@@ -191,17 +191,14 @@ class Character(object):
         self.damage = damage
         self.attack = attack
 
-    def pick_up(self, item, room):
-        if self.pick_up(stuff, current_node):
-            print("You can not pick up this item at this time. Please try again later. Thank you.")
-        else:
-            item.take(self, room)
+    def pick_up(self, item):
+        self.inventory.append(item)
+        print("Taken.")
 
     def drop(self, item, room):
-        if not self.pick_up(stuff, current_node):
-            print("You can't drop the item.")
-        else:
-            item.dropped(self, room)
+        room.inventory.append(item)
+        self.inventory.remove(item)
+        print("Dropped.")
 
     def attack(self, target):
         print("%s attacks %s" % (self.name, target.name))
@@ -364,7 +361,7 @@ travel_map = Map('Travel Map', 'You find a map and rooms that you have not seen 
                                'rooms by saying travel and then where you want to go.')
 info = 'I do not own any Marvel Characters mentioned.'
 
-current_node = bathroom_1
+current_node = m_box
 directions = ['north', 'south', 'west', 'east', 'northwest', 'southeast', 'southwest', 'up', 'down']
 short_directions = ['n', 's', 'w', 'e', 'nw', 'se', 'sw', 'u', 'd']
 is_playing = True
@@ -438,15 +435,13 @@ while is_playing:
         print('Sorry you can not party yet. Beat the ducks and then you can celebrate adventurer.')
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     elif command[:7] == 'pick up':
-        print(';')
         item = command[8:]
-        print(';')
         for stuff in current_node.inventory:
             if item == stuff.name:
-                player.pick_up(stuff, current_node)
+                player.pick_up(stuff)
     elif command[:4] == 'drop':
         item = command[5:]
-        for stuff in current_node.inventory:
+        for stuff in player.inventory:
             if item == stuff.name:
                 player.drop(stuff, current_node)
     elif command == 'inventory':
@@ -477,6 +472,7 @@ while is_playing:
         print("That command is not available. Please try again. Thank You.")
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     if current_node == basement:
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         print(bucky.name)
         print(bucky.dialogue)
     # Handling win conditions
