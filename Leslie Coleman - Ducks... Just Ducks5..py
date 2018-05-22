@@ -388,8 +388,13 @@ while response not in ['yes', 'no']:
               "'\nInventory allows you to see your inventory."
               "\nCommands allows you to see the commands at any point in the game."
               "\nHelp allows you to get certain information during the game."
+<<<<<<< HEAD
               "\npick up allows you to pick up items."
               "\ndrop allows you to drop items."
+=======
+              "\npick up allows you to pick up itmes."
+              "\ndrop allows you to drop itmes."
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
               "\nHave a grand adventure. Be warned, what lies ahead is something you didn't expect.")
     elif response.lower() == 'no':
         print("Have a grand adventure. Be warned, what lies ahead is something you didn't expect.")
@@ -452,6 +457,18 @@ while is_playing:
     elif command == 'inventory':
         for item in player.inventory:
             print(item.name)
+<<<<<<< HEAD
+=======
+    # elif 'eat' in command:
+    #     thingy = command[4:]
+    #     for stuff in player.inventory:
+    #         if thingy == stuff.name:
+    #             if isinstance(stuff, Food):
+    #                 player.consume(stuff)
+    #                 break
+    #             else:
+    #                 break
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
     elif command in directions:
         try:
             current_node.visited = True
@@ -479,13 +496,21 @@ while is_playing:
     if current_node == basement:
         print(bucky.name)
         print(bucky.dialogue)
+<<<<<<< HEAD
     if current_node == classroom:
         print(steve.name)
         print(steve.dialogue)
+=======
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
     if current_node == deadzone:
         print(current_node.description)
         response = input("Would you like to play again? yes/no")
         if response.lower() == 'yes':
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
             # Reset Everything
             Giant_Duck = Character('Giant Duck',
                                    'A giant duck that you need to defeat. (Might also be someone you know)', '', '',
@@ -508,6 +533,7 @@ while is_playing:
                              'Party, Travel, Inventory, Commands, pick up, drop'
             SHORTDIRECTIONS = 'n, s, w, e, nw, se, sw, u, d'
             GARDEN = 'You step into a garden just outside of the mansion, but fenced into its own secluded area. \n' \
+<<<<<<< HEAD
                      'The air is filled with the sweet smell of nectar and despite the apparent age of the garden, ' \
                      '\nthe flowers are thriving with splashed of magnificent, vibrant, glorious colors.'
             M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
@@ -530,11 +556,33 @@ while is_playing:
                        'north. I would not recommend going south.'
             BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. \nThor has been here ' \
                      'because you see the damage of his fight with Loki. \nThere is three paths: East, West, and South.'
+=======
+                     'The air is filled with the sweet smell of nectar and despite the apparent age of the garden, \nthe flowers ' \
+                     'are thriving with splashed of magnificent, vibrant, glorious colors.'
+            M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
+            M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
+            BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see Sam Wilson trapped in a ' \
+                      'cage, muttering something about ducks. \nIn another corner you see a rubber duck wearing a fedora. \nThere ' \
+                      'is a path to the west and a path to the east.'
+            BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
+            KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
+                      '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
+            KITCHEN2 = 'Welcome back to the kitchen. You see Wanda Maximoff cooking with Vision. Go either north, south, east, ' \
+                       'or west'
+            HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to the south.'
+            HOLE_1_2 = 'You are back in the hole. There is a path to the south'
+            CAVE_1 = 'You enter a dirt cave with one torch on the floor. There is three paths to the east, north, and south.'
+            CAVE_1_2 = 'You re-enter a dirt cave with one torch on the floor. There is two paths to the east and north. I would ' \
+                       'not recommend going south.'
+            BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. \nThor has been here because you see ' \
+                     'the damage of his fight with Loki. \nThere is three paths: East, West, and South.'
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
             BATH_1_2 = 'Welcome to bathroom. Paths to the west, east, and south'
             HOLE_2 = 'You fall down another deep hole and there is a path to the northwest.'
             HOLE_2_2 = 'You are back in the deep hole and there is a path to the northwest.'
             CAVE_2 = 'You are in another dirt cave. There is two paths to the southwest and southeast.'
             CAVE_2_2 = 'You re-enter the dirt cave. There is two paths to the southwest and southeast.'
+<<<<<<< HEAD
             STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, \nthere is a cardboard ' \
                       'box. It seems to be partially open. There is a path to the north. There is an avocado here.'
             STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'
@@ -548,12 +596,28 @@ while is_playing:
                    '\nIt\'s probably just Clint Barton'
             BARN2 = 'There is still something watching you. " You need to get out, ASAP!" yelled Natasha Romanoff. ' \
                     '\nHurry to the west or north!!'
+=======
+            STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, \nthere is a cardboard box. ' \
+                      'It seems to be partially open. There is a path to the north. There is an avocado here.'
+            STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'
+            S_BOX = 'You are now in a steel box. There is a path to the north and one to the west.'
+            GRASS = 'You leave the bathroom and you are now in a grassy field. To the north and to the east \nthere ' \
+                    'is a brick wall. There are two paths to the west and south. \nAlso you see Tony Stark working on something ' \
+                    'in the corner'
+            GRASS2 = 'You are now back in the grass field. Paths to the west and south.'
+            BARN = 'You walk through two open doors into a barn. There is two paths leading west and north. ' \
+                   '\nIt appears that nothing is in the barn but you feel like there is something watching you. \nIt\'s probably ' \
+                   'just Clint Barton'
+            BARN2 = 'There is still something watching you. " You need to get out, ASAP!" yelled Natasha Romanoff. \nHurry to ' \
+                    'the west or north!!'
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
             FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is partially broken. ' \
                       '\nThere are two paths to the west and to the east.'
             FANBATH2 = 'Welcome back to the fancy bathroom. Please exit to the west or east.'
             POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
                    '\nwearing a fedora. There are two paths to the east and to the northwest.'
             POOL2 = 'Welcome back. Sadly the pool is closed. Please leave to the east or northwest.'
+<<<<<<< HEAD
             LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks ' \
                       '\nwearing fedoras all over the room. You need to get out either to the west, southeast, or ' \
                       'north.'
@@ -580,6 +644,30 @@ while is_playing:
                        '\nLike Bucky said, he doesn\'t mind sharing his plums. Take some if you want.'
             COMPOUND = 'WOW! It\'s the Avengers Compound. That\'s where they came from. Go down to head back to the ' \
                        'basement. \nPepper Pots is walking around trying to figure out where everyone went.'
+=======
+            LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks \nwearing ' \
+                      'fedoras all over the room. You need to get out either to the west, southeast, or north.'
+            LIBRARY2 = 'AHCHOO! The ducks are moving! Get out to the west, southeast, or north!'
+            CLASS = 'You walk into what look likes an old classroom. \nBooks are left all over the desks and there is ' \
+                    'a staircase in the back. \nThere are two paths leading out, down the staircase and to the east.'
+            CLASS2 = 'Welcome to class. Please leave before Steve Rogers comes back. Head out to the east or go downstairs.'
+            MARSTORAGE = 'You enter a room full of seafoam green colored whiteboard markers. \nThere is two paths up the ' \
+                         'staircase and down the staircase.'
+            MARSTORAGE2 = 'The markers are still there. Go upstairs or downstairs.'
+            LARSTORAGE = 'You enter a dim lighted storage room. You see over 3,000 tiny rubber ducks in the room ' \
+                         '\nsurrounding a the largest rubber duck in the world. You see that your armor has been upgraded ' \
+                         '\nand you now have a sword to fight the ducks. \nThere is a path to the east but it is shut, and ' \
+                         'a path up the stairs. \nDefeat the duck to open the door.'
+            LARSTORAGE2 = 'You are back. Not quite sure if you have defeated the ducks yet. Have fun I guess... :('
+            PARTY = 'You had just defeated the ducks. You walk into a party room to celebrate the win ' \
+                    '\nwith all the people who live in the house and Bruce Banner. Congrats on beating the game. You did a nice ' \
+                    'job.'
+            MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
+            BASEMENT = 'Hey!!! It\'s a basement!!!! And Loki is here!!!! Probably hiding from Thor. Go up and discover a secret. ' \
+                       '\nLike Bucky said, he doesn\'t mind sharing his plums. Take some if you want.'
+            COMPOUND = 'WOW! It\'s the Avengers Compound. That\'s where they came from. Go down to head back to the basement. ' \
+                       '\nPepper Pots is walking around trying to figure out where everyone went.'
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
             DEADZONE = 'I\'m sorry. You are now dead.'
 
             m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '', )
@@ -622,14 +710,21 @@ while is_playing:
         elif response.lower() == 'no':
             print('I\'m sorry. Bye now.')
             is_playing = False
+<<<<<<< HEAD
         else:
             is_playing = False
+=======
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
     # Handling win conditions
     if current_node == party:
         print('///////////////////////////////////////////////////////////////////////////////////////////////////////')
         print(current_node.name)
         print(current_node.description)
+<<<<<<< HEAD
         print('///////////////////////////////////////////////////////////////////////////////////////////////////////')
+=======
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
         response = input("Would you like to play again? yes/no")
         if response.lower() == 'yes':
             Giant_Duck = Character('Giant Duck',
@@ -653,6 +748,7 @@ while is_playing:
                              'Party, Travel, Inventory, Commands, pick up, drop'
             SHORTDIRECTIONS = 'n, s, w, e, nw, se, sw, u, d'
             GARDEN = 'You step into a garden just outside of the mansion, but fenced into its own secluded area. \n' \
+<<<<<<< HEAD
                      'The air is filled with the sweet smell of nectar and despite the apparent age of the garden, ' \
                      '\nthe flowers are thriving with splashed of magnificent, vibrant, glorious colors.'
             M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
@@ -675,11 +771,33 @@ while is_playing:
                        'north. I would not recommend going south.'
             BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. \nThor has been here ' \
                      'because you see the damage of his fight with Loki. \nThere is three paths: East, West, and South.'
+=======
+                     'The air is filled with the sweet smell of nectar and despite the apparent age of the garden, \nthe flowers ' \
+                     'are thriving with splashed of magnificent, vibrant, glorious colors.'
+            M_BOX = 'You wake up in a metal box. There is one path to the north. \nYou are wearing leather armor.'
+            M_BOX2 = 'You are back in the metal box. Remember there is a path to the north'
+            BEDROOM = 'You enter what looks like a bedroom. \nIn the upper right corner you see Sam Wilson trapped in a ' \
+                      'cage, muttering something about ducks. \nIn another corner you see a rubber duck wearing a fedora. \nThere ' \
+                      'is a path to the west and a path to the east.'
+            BEDROOM2 = 'You are back in the bedroom. Remember "Don’t Trust The Ducks!" \nThere is a path to the east and west'
+            KITCHEN = 'You are now in the kitchen. On the table in the upper left corner there is a pocket knife. ' \
+                      '\nThere is four paths: West, North, South, and East. Also you see a very familiar person in the corner.'
+            KITCHEN2 = 'Welcome back to the kitchen. You see Wanda Maximoff cooking with Vision. Go either north, south, east, ' \
+                       'or west'
+            HOLE_1 = 'You fall down a deep hole and land on a mattress. There is a path to the south.'
+            HOLE_1_2 = 'You are back in the hole. There is a path to the south'
+            CAVE_1 = 'You enter a dirt cave with one torch on the floor. There is three paths to the east, north, and south.'
+            CAVE_1_2 = 'You re-enter a dirt cave with one torch on the floor. There is two paths to the east and north. I would ' \
+                       'not recommend going south.'
+            BATH_1 = 'You enter the bathroom. On the shelf there is a half-eaten sandwich. \nThor has been here because you see ' \
+                     'the damage of his fight with Loki. \nThere is three paths: East, West, and South.'
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
             BATH_1_2 = 'Welcome to bathroom. Paths to the west, east, and south'
             HOLE_2 = 'You fall down another deep hole and there is a path to the northwest.'
             HOLE_2_2 = 'You are back in the deep hole and there is a path to the northwest.'
             CAVE_2 = 'You are in another dirt cave. There is two paths to the southwest and southeast.'
             CAVE_2_2 = 'You re-enter the dirt cave. There is two paths to the southwest and southeast.'
+<<<<<<< HEAD
             STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, \nthere is a cardboard ' \
                       'box. It seems to be partially open. There is a path to the north. There is an avocado here.'
             STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'
@@ -693,12 +811,28 @@ while is_playing:
                    '\nIt\'s probably just Clint Barton'
             BARN2 = 'There is still something watching you. " You need to get out, ASAP!" yelled Natasha Romanoff. ' \
                     '\nHurry to the west or north!!'
+=======
+            STORAGE = 'You walk into a dim lighted storage room. In the bottom right corner, \nthere is a cardboard box. ' \
+                      'It seems to be partially open. There is a path to the north. There is an avocado here.'
+            STORAGE2 = 'There is still a box in the corner of the room. There is a path to the north.'
+            S_BOX = 'You are now in a steel box. There is a path to the north and one to the west.'
+            GRASS = 'You leave the bathroom and you are now in a grassy field. To the north and to the east \nthere ' \
+                    'is a brick wall. There are two paths to the west and south. \nAlso you see Tony Stark working on something ' \
+                    'in the corner'
+            GRASS2 = 'You are now back in the grass field. Paths to the west and south.'
+            BARN = 'You walk through two open doors into a barn. There is two paths leading west and north. ' \
+                   '\nIt appears that nothing is in the barn but you feel like there is something watching you. \nIt\'s probably ' \
+                   'just Clint Barton'
+            BARN2 = 'There is still something watching you. " You need to get out, ASAP!" yelled Natasha Romanoff. \nHurry to ' \
+                    'the west or north!!'
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
             FANBATH = 'You enter a fancy bathroom. On the wall there is a mirror that is partially broken. ' \
                       '\nThere are two paths to the west and to the east.'
             FANBATH2 = 'Welcome back to the fancy bathroom. Please exit to the west or east.'
             POOL = 'You leave the bathroom and walk onto a pool deck. Floating in the pool is another rubber duck ' \
                    '\nwearing a fedora. There are two paths to the east and to the northwest.'
             POOL2 = 'Welcome back. Sadly the pool is closed. Please leave to the east or northwest.'
+<<<<<<< HEAD
             LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks ' \
                       '\nwearing fedoras all over the room. You need to get out either to the west, southeast, or ' \
                       'north.'
@@ -725,6 +859,30 @@ while is_playing:
                        'want.'
             COMPOUND = 'WOW! It\'s the Avengers Compound. That\'s where they came from. Go down to head back to the ' \
                        'basement. \nPepper Pots is walking around trying to figure out where everyone went.'
+=======
+            LIBRARY = 'You walk into a library full of dusty books. You look around and find 600 rubber ducks \nwearing ' \
+                      'fedoras all over the room. You need to get out either to the west, southeast, or north.'
+            LIBRARY2 = 'AHCHOO! The ducks are moving! Get out to the west, southeast, or north!'
+            CLASS = 'You walk into what look likes an old classroom. \nBooks are left all over the desks and there is ' \
+                    'a staircase in the back. \nThere are two paths leading out, down the staircase and to the east.'
+            CLASS2 = 'Welcome to class. Please leave before Steve Rogers comes back. Head out to the east or go downstairs.'
+            MARSTORAGE = 'You enter a room full of seafoam green colored whiteboard markers. \nThere is two paths up the ' \
+                         'staircase and down the staircase.'
+            MARSTORAGE2 = 'The markers are still there. Go upstairs or downstairs.'
+            LARSTORAGE = 'You enter a dim lighted storage room. You see over 3,000 tiny rubber ducks in the room ' \
+                         '\nsurrounding a the largest rubber duck in the world. You see that your armor has been upgraded ' \
+                         '\nand you now have a sword to fight the ducks. \nThere is a path to the east but it is shut, and ' \
+                         'a path up the stairs. \nDefeat the duck to open the door.'
+            LARSTORAGE2 = 'You are back. Not quite sure if you have defeated the ducks yet. Have fun I guess... :('
+            PARTY = 'You had just defeated the ducks. You walk into a party room to celebrate the win ' \
+                    '\nwith all the people who live in the house and Bruce Banner. Congrats on beating the game. You did a nice ' \
+                    'job.'
+            MOVIESET = 'You enter what looks like a movie set. You close your eyes and see the filming of your favorite movie.'
+            BASEMENT = 'Hey!!! It\'s a basement!!!! And Loki is here!!!! Probably hiding from Thor. Go up and discover a secret. ' \
+                       '\nLike Bucky said, he doesn\'t mind sharing his plums. Take some if you want.'
+            COMPOUND = 'WOW! It\'s the Avengers Compound. That\'s where they came from. Go down to head back to the basement. ' \
+                       '\nPepper Pots is walking around trying to figure out where everyone went.'
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
             DEADZONE = 'I\'m sorry. You are now dead.'
 
             m_box = Room('Metal Box', M_BOX, M_BOX2, 'bedroom', '', '', '', '', '', '', '', '', '', )
@@ -763,8 +921,13 @@ while is_playing:
             is_player = True
             current_node = m_box
         elif response.lower() == 'no':
+<<<<<<< HEAD
             print('Congrats on winning. Bye Now.')
             is_playing = False
         else:
             print("Congrats on winning ")
             is_playing = False
+=======
+            print('I\'m sorry. Bye now.')
+            is_playing = False
+>>>>>>> 8d6a710298e79f691a4b23b7ec415fb514c132f9
